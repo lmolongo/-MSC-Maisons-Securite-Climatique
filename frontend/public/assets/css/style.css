@@ -1,0 +1,205 @@
+/* ═══════════════════════════════════════════════════════════
+   MSC — style.css
+   Base: shared.css foundations + tropical Caribbean palette
+   Clean version — no duplicated rules, no excessive layers
+═══════════════════════════════════════════════════════════ */
+
+/* ══════ IMPORT SHARED BASE ══════ */
+@import url('/assets/css/shared.css');
+
+/* ══════════════════════════════════════════════════════════
+   TROPICAL CARIBBEAN COLOR OVERRIDES
+   These override the neutral shared.css backgrounds
+   with warm lagon/sable/corail tones
+══════════════════════════════════════════════════════════ */
+
+:root {
+    --lagon: #00b4d8;
+    --lagon-deep: #0077b6;
+    --lagon-light: #90e0ef;
+    --sable: #e9c46a;
+    --corail-vif: #e76f51;
+    --turquoise: #2ec4b6;
+    --feuille-trop: #52b788;
+}
+
+/* ═══ NAVIGATION — teinte lagon ═══ */
+.nav-bar {
+    background: rgba(230, 248, 252, 0.85) !important;
+}
+
+/* ═══ MARQUEE — fond lagon ═══ */
+.marquee-section {
+    background: linear-gradient(135deg, #e2f5f9 0%, #edfaf7 35%, #f5faec 70%, #faf3e4 100%) !important;
+    border-top-color: rgba(0, 180, 216, 0.18) !important;
+    border-bottom-color: rgba(0, 180, 216, 0.18) !important;
+}
+.marquee-section::before {
+    background: linear-gradient(90deg, #e2f5f9, transparent) !important;
+}
+.marquee-section::after {
+    background: linear-gradient(270deg, #e2f5f9, transparent) !important;
+}
+
+/* ═══ SECTIONS — fonds tropicaux ═══ */
+.section[style*="var(--bg)"] {
+    background: linear-gradient(160deg, #e8f7f9 0%, #eef8f3 30%, #f6f4e8 65%, #f0f7f4 100%) !important;
+}
+
+#concept {
+    background: linear-gradient(155deg, #ddf2f8 0%, #e8f8f3 22%, #f3f8e6 50%, #f8f0e2 75%, #e8f3f8 100%) !important;
+}
+
+#gammes {
+    background: linear-gradient(148deg, #e6f7f2 0%, #f2f8e4 28%, #faf3de 58%, #ede8e0 100%) !important;
+}
+
+#innovations {
+    background: linear-gradient(142deg, #dff3ef 0%, #edf8f3 28%, #f6f3e6 58%, #f3ede6 100%) !important;
+}
+
+#impact {
+    background: linear-gradient(158deg, #f9ede8 0%, #f6f3e4 32%, #e8f5ee 62%, #e4f0f6 100%) !important;
+}
+
+#contact {
+    background: linear-gradient(148deg, #dff0f8 0%, #e8f8f3 28%, #f3f8e4 58%, #f8ede6 85%, #e4eef6 100%) !important;
+}
+
+/* ═══ PARTNERS — fond chaleureux ═══ */
+.partners {
+    background: linear-gradient(135deg, #e4f5ef 0%, #f2f8e2 38%, #f8f0e4 68%, #e2eef6 100%) !important;
+    border-top-color: rgba(46, 196, 182, 0.18) !important;
+}
+
+/* ═══ FOOTER — tropical sombre ═══ */
+footer {
+    background: linear-gradient(145deg, #0e1e2c 0%, #122820 45%, #1e2010 100%) !important;
+    border-top: 2px solid rgba(0, 180, 216, 0.25) !important;
+}
+footer .footer-l,
+footer .footer-r {
+    color: rgba(202, 240, 248, 0.45) !important;
+}
+footer .footer-inner {
+    position: relative;
+    z-index: 1;
+}
+
+/* ═══ CARDS — teintes tropicales subtiles ═══ */
+.bc {
+    background: linear-gradient(145deg, rgba(248, 252, 254, 0.95), rgba(238, 250, 247, 0.92)) !important;
+}
+.bc-water {
+    background: linear-gradient(145deg, rgba(220, 244, 252, 0.92), rgba(210, 240, 248, 0.88)) !important;
+}
+.bc-cyclone {
+    background: linear-gradient(145deg, rgba(252, 246, 220, 0.92), rgba(248, 238, 210, 0.88)) !important;
+}
+.bc-seisme {
+    background: linear-gradient(145deg, rgba(252, 236, 230, 0.92), rgba(248, 226, 218, 0.88)) !important;
+}
+
+.gamme {
+    background: linear-gradient(148deg, #fafcfa, #f3f9f6) !important;
+}
+.g-raco.gamme {
+    background: linear-gradient(148deg, #f8fcfe, #edf6fa) !important;
+}
+.g-lamb.gamme {
+    background: linear-gradient(148deg, #fefcf5, #faf5e6) !important;
+}
+
+.inno-row {
+    background: linear-gradient(130deg, rgba(248, 253, 254, 0.97), rgba(238, 250, 246, 0.95)) !important;
+}
+.inno-row:hover {
+    background: linear-gradient(130deg, #e2f4f8, #e8f8f3) !important;
+}
+
+.impact-card {
+    background: linear-gradient(148deg, #fefefe, #f5f9f6) !important;
+}
+
+/* ═══ FORM — teinte lagon ═══ */
+.form-card {
+    background: linear-gradient(148deg, rgba(248, 253, 255, 0.97), rgba(240, 250, 252, 0.95)) !important;
+    border-color: rgba(0, 180, 216, 0.14) !important;
+}
+.fg input,
+.fg textarea {
+    background: rgba(232, 248, 252, 0.5) !important;
+}
+.fg input:focus,
+.fg textarea:focus {
+    background: #fff !important;
+}
+
+/* ═══ PARTNER CHIPS — teinte tropicale ═══ */
+.partner-chip {
+    background: linear-gradient(135deg, #e8f6f2, #f0f6e8) !important;
+}
+.partner-chip:hover {
+    background: linear-gradient(135deg, #d8f2ec, #e8f2d8) !important;
+}
+
+/* ═══ SECTION GLOWS — version lagon (renforce les ::before/::after de shared.css) ═══ */
+#concept::before {
+    background: radial-gradient(circle, rgba(0, 180, 216, 0.08) 0%, rgba(0, 180, 216, 0.02) 45%, transparent 65%) !important;
+}
+#contact::before {
+    background: radial-gradient(circle, rgba(0, 180, 216, 0.06) 0%, rgba(0, 180, 216, 0.015) 45%, transparent 65%) !important;
+}
+
+/* ═══ HERO TRANSITION — fondu vers marquee ═══ */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(226, 245, 249, 0.3) 40%,
+        rgba(226, 245, 249, 0.7) 70%,
+        #e2f5f9 100%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* ═══ WAVE DIVIDERS — cachés (transitions via CSS gradients) ═══ */
+.wave-divider {
+    display: none !important;
+}
+
+/* ═══ TROPICAL DECO — opacité réduite pour subtilité ═══ */
+.tropical-deco.td-leaf {
+    opacity: 0.04 !important;
+}
+
+/* ═══ BUBBLE ANIM (pour le JS qui en crée dynamiquement) ═══ */
+.trop-bubble {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.55), rgba(0, 180, 216, 0.12));
+    border: 1px solid rgba(0, 180, 216, 0.15);
+    animation: tropBubbleRise linear infinite;
+}
+
+@keyframes tropBubbleRise {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-30px) translateX(5px);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-60px) translateX(-3px);
+        opacity: 0;
+    }
+}

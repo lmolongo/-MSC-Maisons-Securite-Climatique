@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales — MSC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+</head>
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- NAV -->
+    <div class="nav-wrap" id="navWrap">
+        <nav class="nav-bar">
+            <a href="/" class="nav-brand">
+                <div class="nav-logo">MSC</div>
+                <span>MAISONS SÉCURITÉ CLIMATIQUE</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/terrains">Terrains</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+            <a href="/#contact" class="nav-cta">Nous contacter</a>
+            <button class="mobile-btn" id="mobBtn">☰</button>
+        </nav>
+    </div>
+
+    <div class="mob-nav" id="mobNav">
+        <button class="mob-close" id="mobClose">✕</button>
+        <a href="/" class="mob-link">Accueil</a>
+        <a href="/terrains" class="mob-link">Terrains</a>
+        <a href="/#contact" class="mob-link">Contact</a>
+    </div>
+
+    <section class="section" style="padding-top:10rem;max-width:800px;">
+        <div>
+            <span class="section-tag tag-bleu">Juridique</span>
+            <h1 class="section-h">Mentions <em>légales</em></h1>
+        </div>
+
+        <div style="margin-top:2.5rem;color:var(--text-secondary);font-size:0.92rem;line-height:1.8;">
+            <h2 style="font-size:1.1rem;font-weight:700;color:var(--text);margin:2rem 0 0.5rem;">Éditeur du site</h2>
+            <p>Le site msc-guadeloupe.fr est édité par <strong>Vent Martial / Accentium971</strong>.</p>
+            <p>Siège social : Guadeloupe (971), France</p>
+            <p>Contact : <a href="/#contact" style="color:var(--bleu);">Formulaire de contact</a></p>
+
+            <h2 style="font-size:1.1rem;font-weight:700;color:var(--text);margin:2rem 0 0.5rem;">Hébergement</h2>
+            <p>Ce site est hébergé par <strong>OVH SAS</strong><br>
+            2 rue Kellermann, 59100 Roubaix, France<br>
+            Tél : +33 9 72 10 10 07</p>
+
+            <h2 style="font-size:1.1rem;font-weight:700;color:var(--text);margin:2rem 0 0.5rem;">Propriété intellectuelle</h2>
+            <p>L'ensemble des contenus (textes, images, vidéos, logos) présents sur ce site sont protégés par le droit d'auteur. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
+
+            <h2 style="font-size:1.1rem;font-weight:700;color:var(--text);margin:2rem 0 0.5rem;">Données personnelles</h2>
+            <p>Les informations recueillies via les formulaires de contact sont destinées exclusivement à Vent Martial / Accentium971 pour le traitement de votre demande. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous via le formulaire de contact.</p>
+
+            <h2 style="font-size:1.1rem;font-weight:700;color:var(--text);margin:2rem 0 0.5rem;">Cookies</h2>
+            <p>Ce site n'utilise pas de cookies de suivi ni d'outils d'analyse tiers.</p>
+
+            <h2 style="font-size:1.1rem;font-weight:700;color:var(--text);margin:2rem 0 0.5rem;">Responsabilité</h2>
+            <p>Les informations présentes sur ce site sont fournies à titre indicatif. Vent Martial / Accentium971 ne saurait être tenu responsable de l'utilisation qui pourrait être faite de ces informations.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-l">© 2026 MSC — Vent Martial / Accentium971</div>
+            <div class="footer-r"><a href="/" style="color:var(--text-muted);text-decoration:none;">Accueil</a></div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const s = document.documentElement.scrollTop;
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            document.getElementById('scrollProgress').style.width = (s/h)*100+'%';
+            document.getElementById('navWrap').classList.toggle('scrolled', s > 80);
+        });
+        document.getElementById('mobBtn')?.addEventListener('click', () => document.getElementById('mobNav').classList.add('active'));
+        document.getElementById('mobClose')?.addEventListener('click', () => document.getElementById('mobNav').classList.remove('active'));
+        document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => document.getElementById('mobNav').classList.remove('active')));
+    </script>
+</body>
+</html>

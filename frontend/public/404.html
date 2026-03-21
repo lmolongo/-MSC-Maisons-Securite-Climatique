@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page introuvable | MSC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+</head>
+<body>
+
+    <div class="nav-wrap" id="navWrap">
+        <nav class="nav-bar">
+            <a href="/" class="nav-brand">
+                <div class="nav-logo">MSC</div>
+                <span>MAISONS SÉCURITÉ CLIMATIQUE</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/terrains">Terrains</a></li>
+            </ul>
+            <a href="/#contact" class="nav-cta">Nous contacter</a>
+        </nav>
+    </div>
+
+    <section style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem 2rem;text-align:center;background:var(--bg-hero);position:relative;overflow:hidden;">
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+        <div style="position:relative;z-index:2;max-width:600px;">
+            <div style="font-size:8rem;margin-bottom:1rem;opacity:0.15;">🏝️</div>
+            <h1 style="font-family:'Poppins',sans-serif;font-size:clamp(4rem,10vw,8rem);font-weight:900;letter-spacing:-0.04em;line-height:1;color:var(--text);margin-bottom:1rem;">
+                <span style="background:linear-gradient(145deg,var(--bleu),var(--vert));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">404</span>
+            </h1>
+            <p style="font-size:1.3rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Page introuvable</p>
+            <p style="font-size:1rem;color:var(--text-muted);margin-bottom:2.5rem;line-height:1.7;">
+                Cette page n'existe pas ou a été déplacée.<br>
+                Comme une maison sans fondations, elle ne tient pas debout.
+            </p>
+            <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+                <a href="/" class="btn-glow">Retour à l'accueil <span class="arrow">→</span></a>
+                <a href="/terrains" class="btn-outline">Voir les terrains</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('navWrap').classList.toggle('scrolled', window.scrollY > 80);
+        });
+    </script>
+</body>
+</html>

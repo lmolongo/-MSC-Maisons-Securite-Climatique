@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — MSC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bleu: #2478a0;
+            --bleu-soft: rgba(36,120,160,0.08);
+            --vert: #2d8a4e;
+            --vert-soft: rgba(45,138,78,0.08);
+            --jaune: #e8a820;
+            --jaune-soft: rgba(232,168,32,0.08);
+            --marron: #7d5e35;
+            --marron-soft: rgba(125,94,53,0.08);
+            --corail: #c45545;
+            --corail-soft: rgba(196,85,69,0.08);
+
+            --bg: #f7f8fa;
+            --bg-card: #ffffff;
+            --border: rgba(0,0,0,0.06);
+            --border-hover: rgba(0,0,0,0.12);
+            --text: #1a2332;
+            --text-secondary: #3a4a5c;
+            --text-muted: #7a8a9c;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+            --radius: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ══════ LOGIN SCREEN ══════ */
+        .login-screen {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(160deg, #eaf4f8, #f7f8fa, #fdf6ec);
+        }
+        .login-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem;
+            width: 100%; max-width: 400px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+        .login-logo {
+            width: 56px; height: 56px; border-radius: 16px;
+            background: linear-gradient(145deg, var(--bleu), var(--vert));
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 800; font-size: 1.1rem;
+            margin: 0 auto 1.5rem;
+        }
+        .login-card h1 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .login-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .login-field {
+            width: 100%; padding: 0.75rem 1rem;
+            border: 1.5px solid var(--border-hover);
+            border-radius: 12px; font-family: inherit;
+            font-size: 0.87rem; outline: none;
+            transition: border-color 0.3s;
+            margin-bottom: 0.75rem;
+            background: var(--bg);
+        }
+        .login-field:focus { border-color: var(--bleu); }
+        .login-btn {
+            width: 100%; padding: 0.8rem;
+            background: linear-gradient(145deg, var(--bleu), #1d6586);
+            color: #fff; border: none; border-radius: 12px;
+            font-family: inherit; font-size: 0.87rem; font-weight: 600;
+            cursor: pointer; transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+        .login-btn:hover { box-shadow: 0 4px 16px rgba(36,120,160,0.3); transform: translateY(-1px); }
+        .login-error {
+            color: var(--corail); font-size: 0.8rem; margin-top: 0.75rem;
+            display: none;
+        }
+
+        /* ══════ DASHBOARD ══════ */
+        .dashboard { display: none; }
+        .dashboard.active { display: block; }
+
+        .topbar {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            height: 64px;
+            display: flex; align-items: center; justify-content: space-between;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .topbar-left { display: flex; align-items: center; gap: 1rem; }
+        .topbar-logo {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: linear-gradient(145deg, var(--bleu), var(--vert));
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 800; font-size: 0.7rem;
+        }
+        .topbar-title { font-weight: 700; font-size: 0.95rem; }
+        .topbar-badge {
+            font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.55rem;
+            background: var(--bleu-soft); color: var(--bleu);
+            border-radius: 100px;
+        }
+        .topbar-right { display: flex; align-items: center; gap: 0.75rem; }
+        .btn-logout {
+            padding: 0.45rem 1rem; border-radius: 10px;
+            background: var(--bg); border: 1px solid var(--border);
+            font-family: inherit; font-size: 0.78rem;
+            color: var(--text-muted); cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-logout:hover { background: var(--corail-soft); color: var(--corail); border-color: rgba(196,85,69,0.2); }
+
+        .main-content { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+        /* Stats cards */
+        .stats-row {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1rem; margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .stat-card-label { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+        .stat-card-value { font-size: 2rem; font-weight: 800; }
+        .stat-card-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+        /* Filters */
+        .filters {
+            display: flex; align-items: center; gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .filter-btn {
+            padding: 0.45rem 1rem; border-radius: 100px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            font-family: inherit; font-size: 0.78rem; font-weight: 500;
+            color: var(--text-secondary); cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover { border-color: var(--border-hover); }
+        .filter-btn.active {
+            background: var(--bleu); color: #fff; border-color: var(--bleu);
+        }
+        .filter-btn.active[data-type="contact"] { background: var(--bleu); border-color: var(--bleu); }
+        .filter-btn.active[data-type="terrain-vendeur"] { background: var(--vert); border-color: var(--vert); }
+
+        /* Table */
+        .table-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .table-wrap { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; }
+        th {
+            text-align: left; padding: 0.85rem 1.25rem;
+            font-size: 0.7rem; font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.06em;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+        }
+        td {
+            padding: 0.85rem 1.25rem;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(36,120,160,0.02); }
+
+        .type-badge {
+            display: inline-block; padding: 0.18rem 0.55rem;
+            border-radius: 100px; font-size: 0.65rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.04em;
+        }
+        .type-badge.contact { background: var(--bleu-soft); color: var(--bleu); }
+        .type-badge.terrain-vendeur { background: var(--vert-soft); color: var(--vert); }
+
+        .data-field { margin-bottom: 0.3rem; }
+        .data-field-label { font-size: 0.65rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+        .data-field-value { font-size: 0.82rem; color: var(--text); word-break: break-word; }
+
+        .btn-delete {
+            padding: 0.35rem 0.7rem; border-radius: 8px;
+            background: var(--bg); border: 1px solid var(--border);
+            font-family: inherit; font-size: 0.72rem;
+            color: var(--text-muted); cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-delete:hover { background: var(--corail-soft); color: var(--corail); border-color: rgba(196,85,69,0.2); }
+
+        .date-cell {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem; color: var(--text-muted);
+        }
+        .ip-cell {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem; color: var(--text-muted);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1rem 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+        .pagination-info { font-size: 0.78rem; color: var(--text-muted); }
+        .pagination-btns { display: flex; gap: 0.4rem; }
+        .page-btn {
+            padding: 0.4rem 0.8rem; border-radius: 8px;
+            background: var(--bg); border: 1px solid var(--border);
+            font-family: inherit; font-size: 0.78rem;
+            color: var(--text-secondary); cursor: pointer;
+            transition: all 0.2s;
+        }
+        .page-btn:hover:not(:disabled) { border-color: var(--bleu); color: var(--bleu); }
+        .page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center; padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+        .empty-state-emoji { font-size: 3rem; margin-bottom: 1rem; opacity: 0.3; }
+        .empty-state p { font-size: 0.9rem; }
+
+        /* Loading */
+        .loading { text-align: center; padding: 3rem; color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .stats-row { grid-template-columns: 1fr; }
+            .main-content { padding: 1rem; }
+            .topbar { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <div class="login-logo">MSC</div>
+            <h1>Administration</h1>
+            <p>Accédez aux messages reçus</p>
+            <input type="text" class="login-field" id="loginUser" placeholder="Identifiant" autocomplete="username">
+            <input type="password" class="login-field" id="loginPass" placeholder="Mot de passe" autocomplete="current-password">
+            <button class="login-btn" id="loginBtn">Se connecter</button>
+            <div class="login-error" id="loginError">Identifiants incorrects</div>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard" id="dashboard">
+        <div class="topbar">
+            <div class="topbar-left">
+                <div class="topbar-logo">MSC</div>
+                <span class="topbar-title">Messages</span>
+                <span class="topbar-badge" id="totalBadge">0</span>
+            </div>
+            <div class="topbar-right">
+                <a href="/" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none;">← Retour au site</a>
+                <button class="btn-logout" id="logoutBtn">Déconnexion</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Stats -->
+            <div class="stats-row" id="statsRow">
+                <div class="stat-card">
+                    <div class="stat-card-label">Total messages</div>
+                    <div class="stat-card-value" id="statTotal">—</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-label">Contacts</div>
+                    <div class="stat-card-value" id="statContact" style="color:var(--bleu);">—</div>
+                    <div class="stat-card-sub" id="statContactDate"></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-label">Propositions terrain</div>
+                    <div class="stat-card-value" id="statTerrain" style="color:var(--vert);">—</div>
+                    <div class="stat-card-sub" id="statTerrainDate"></div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters">
+                <button class="filter-btn active" data-type="">Tous</button>
+                <button class="filter-btn" data-type="contact">📩 Contacts</button>
+                <button class="filter-btn" data-type="terrain-vendeur">🗺️ Terrains</button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-card">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:50px;">#</th>
+                                <th style="width:100px;">Type</th>
+                                <th>Détails</th>
+                                <th style="width:140px;">Date</th>
+                                <th style="width:100px;">IP</th>
+                                <th style="width:60px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr><td colspan="6" class="loading">Chargement...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <div class="pagination-info" id="paginationInfo">—</div>
+                    <div class="pagination-btns">
+                        <button class="page-btn" id="prevBtn" disabled>← Précédent</button>
+                        <button class="page-btn" id="nextBtn" disabled>Suivant →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let authHeader = '';
+        let currentPage = 1;
+        let currentType = '';
+
+        // ══════ AUTH ══════
+        function buildBasicHeader(user, pass) {
+            const str = user + ':' + pass;
+            const bytes = new TextEncoder().encode(str);
+            const binStr = Array.from(bytes, b => String.fromCodePoint(b)).join('');
+            return 'Basic ' + btoa(binStr);
+        }
+
+        // Login via POST — never triggers browser popup
+        async function login(user, pass) {
+            try {
+                const res = await fetch('/api/admin/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ user, password: pass }),
+                });
+                return res.ok;
+            } catch {
+                return false;
+            }
+        }
+
+        // Test saved session with Basic Auth header
+        async function testSession(header) {
+            try {
+                const res = await fetch('/api/admin/stats', { headers: { Authorization: header } });
+                return res.ok;
+            } catch {
+                return false;
+            }
+        }
+
+        // Restore session on page load — ONE attempt
+        (async () => {
+            const saved = sessionStorage.getItem('msc_auth');
+            if (saved) {
+                const ok = await testSession(saved);
+                if (ok) {
+                    authHeader = saved;
+                    showDashboard();
+                } else {
+                    sessionStorage.removeItem('msc_auth');
+                }
+            }
+        })();
+
+        // Login button
+        document.getElementById('loginBtn').addEventListener('click', async () => {
+            const user = document.getElementById('loginUser').value.trim();
+            const pass = document.getElementById('loginPass').value;
+            const errEl = document.getElementById('loginError');
+            errEl.style.display = 'none';
+
+            if (!user || !pass) return;
+
+            // Step 1: validate credentials via POST (no 401 popup risk)
+            const ok = await login(user, pass);
+
+            if (ok) {
+                // Step 2: build Basic Auth header for subsequent API calls
+                authHeader = buildBasicHeader(user, pass);
+                sessionStorage.setItem('msc_auth', authHeader);
+                showDashboard();
+            } else {
+                errEl.textContent = 'Identifiants incorrects';
+                errEl.style.display = 'block';
+            }
+        });
+
+        // Enter key
+        document.querySelectorAll('.login-field').forEach(f => {
+            f.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') document.getElementById('loginBtn').click();
+            });
+        });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            authHeader = '';
+            sessionStorage.removeItem('msc_auth');
+            document.getElementById('dashboard').classList.remove('active');
+            document.getElementById('loginScreen').style.display = '';
+        });
+
+        // ══════ DASHBOARD ══════
+        function showDashboard() {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('dashboard').classList.add('active');
+            loadStats();
+            loadSubmissions();
+        }
+
+        async function apiFetch(url) {
+            try {
+                const res = await fetch(url, { headers: { Authorization: authHeader } });
+                if (res.status === 401) {
+                    authHeader = '';
+                    sessionStorage.removeItem('msc_auth');
+                    document.getElementById('dashboard').classList.remove('active');
+                    document.getElementById('loginScreen').style.display = '';
+                    document.getElementById('loginError').textContent = 'Session expirée — reconnectez-vous';
+                    document.getElementById('loginError').style.display = 'block';
+                    return null;
+                }
+                return res.json();
+            } catch {
+                return null;
+            }
+        }
+
+        // Stats
+        async function loadStats() {
+            const data = await apiFetch('/api/admin/stats');
+            if (!data) return;
+
+            document.getElementById('statTotal').textContent = data.total;
+            document.getElementById('totalBadge').textContent = data.total;
+
+            const contact = data.by_type.find(t => t.type === 'contact');
+            const terrain = data.by_type.find(t => t.type === 'terrain-vendeur');
+
+            document.getElementById('statContact').textContent = contact ? contact.count : '0';
+            document.getElementById('statTerrain').textContent = terrain ? terrain.count : '0';
+
+            if (contact?.last_at) {
+                document.getElementById('statContactDate').textContent = 'Dernier : ' + formatDate(contact.last_at);
+            }
+            if (terrain?.last_at) {
+                document.getElementById('statTerrainDate').textContent = 'Dernier : ' + formatDate(terrain.last_at);
+            }
+        }
+
+        // Submissions
+        async function loadSubmissions() {
+            const typeParam = currentType ? `&type=${currentType}` : '';
+            const data = await apiFetch(`/api/admin/submissions?page=${currentPage}&limit=15${typeParam}`);
+            if (!data) return;
+
+            const tbody = document.getElementById('tableBody');
+            const { submissions, pagination } = data;
+
+            if (submissions.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><div class="empty-state-emoji">📭</div><p>Aucun message pour le moment</p></div></td></tr>`;
+            } else {
+                tbody.innerHTML = submissions.map(s => `
+                    <tr>
+                        <td style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--text-muted);">${s.id}</td>
+                        <td><span class="type-badge ${s.type}">${s.type === 'contact' ? '📩 Contact' : '🗺️ Terrain'}</span></td>
+                        <td>${renderData(s.type, s.data)}</td>
+                        <td class="date-cell">${formatDate(s.created_at)}</td>
+                        <td class="ip-cell">${s.ip || '—'}</td>
+                        <td><button class="btn-delete" onclick="deleteSubmission(${s.id})">✕</button></td>
+                    </tr>
+                `).join('');
+            }
+
+            // Pagination
+            document.getElementById('paginationInfo').textContent =
+                `Page ${pagination.page} / ${pagination.pages || 1} — ${pagination.total} message${pagination.total > 1 ? 's' : ''}`;
+            document.getElementById('prevBtn').disabled = pagination.page <= 1;
+            document.getElementById('nextBtn').disabled = pagination.page >= pagination.pages;
+        }
+
+        function renderData(type, data) {
+            const fields = [];
+            if (data.name) fields.push(field('Nom', data.name));
+            if (data.email) fields.push(field('Email', `<a href="mailto:${esc(data.email)}" style="color:var(--bleu);text-decoration:none;">${esc(data.email)}</a>`));
+            if (data.phone) fields.push(field('Tél', data.phone));
+
+            if (type === 'contact' && data.message) {
+                fields.push(field('Message', `<span style="color:var(--text-secondary);">${esc(data.message).substring(0, 200)}${data.message.length > 200 ? '…' : ''}</span>`));
+            }
+            if (type === 'terrain-vendeur') {
+                if (data.location) fields.push(field('Localisation', data.location));
+                if (data.area) fields.push(field('Superficie', data.area));
+                if (data.details) fields.push(field('Infos', `<span style="color:var(--text-secondary);">${esc(data.details).substring(0, 150)}${data.details.length > 150 ? '…' : ''}</span>`));
+            }
+
+            return fields.join('');
+        }
+
+        function field(label, value) {
+            return `<div class="data-field"><span class="data-field-label">${label}</span><br><span class="data-field-value">${value}</span></div>`;
+        }
+
+        function esc(str) {
+            if (!str) return '';
+            return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        }
+
+        function formatDate(iso) {
+            const d = new Date(iso);
+            return d.toLocaleDateString('fr-FR', { day:'2-digit', month:'2-digit', year:'numeric' })
+                + ' ' + d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+        }
+
+        // Delete
+        async function deleteSubmission(id) {
+            if (!confirm(`Supprimer le message #${id} ?`)) return;
+            const res = await fetch(`/api/admin/submissions/${id}`, {
+                method: 'DELETE',
+                headers: { Authorization: authHeader },
+            });
+            if (res.ok) {
+                loadStats();
+                loadSubmissions();
+            }
+        }
+
+        // Filters
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentType = btn.dataset.type;
+                currentPage = 1;
+                loadSubmissions();
+            });
+        });
+
+        // Pagination
+        document.getElementById('prevBtn').addEventListener('click', () => { currentPage--; loadSubmissions(); });
+        document.getElementById('nextBtn').addEventListener('click', () => { currentPage++; loadSubmissions(); });
+    </script>
+</body>
+</html>

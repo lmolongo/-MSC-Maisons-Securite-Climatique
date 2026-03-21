@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSC — Maisons Sécurité Climatique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/shared.css">
+    
+</head>
+<body>
+
+    <!-- Custom cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Animated gradient blobs — background depth -->
+    <div class="blob-container">
+        <div class="gradient-blob blob-1"></div>
+        <div class="gradient-blob blob-2"></div>
+        <div class="gradient-blob blob-3"></div>
+        <div class="gradient-blob blob-4"></div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <canvas id="bgCanvas"></canvas>
+
+    <div class="mob-nav" id="mobNav">
+        <button class="mob-close" id="mobClose">✕</button>
+        <a href="#accueil" class="mob-link">Accueil</a>
+        <a href="#concept" class="mob-link">Concept</a>
+        <a href="#gammes" class="mob-link">Nos Gammes</a>
+        <a href="#innovations" class="mob-link">Innovations</a>
+        <a href="/terrains" class="mob-link">Terrains</a>
+        <a href="#impact" class="mob-link">Impact</a>
+        <a href="#contact" class="mob-link">Contact</a>
+    </div>
+
+    <!-- NAV -->
+    <div class="nav-wrap" id="navWrap">
+        <nav class="nav-bar">
+            <a href="#accueil" class="nav-brand">
+                <div class="nav-logo">MSC</div>
+                <span>MAISONS SÉCURITÉ CLIMATIQUE</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#concept">Concept</a></li>
+                <li><a href="#gammes">Nos Gammes</a></li>
+                <li><a href="#innovations">Innovations</a></li>
+                <li><a href="/terrains">Terrains</a></li>
+                <li><a href="#impact">Impact</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Nous contacter</a>
+            <button class="mobile-btn" id="mobBtn">☰</button>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="accueil">
+        <!-- Image de fond — remplace l'URL dans le CSS (.hero-bg-image) -->
+        <div class="hero-bg-image"></div>
+        <div class="hero-bg-overlay"></div>
+        <div class="madras-bg" style="z-index:2;"></div>
+        <div class="hero-ocean"></div>
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+        <div class="hero-glow-3"></div>
+        <div class="hero-content">
+            <div class="hero-pill">
+                <div class="pill-live"></div>
+                Guadeloupe · Programme pilote en cours
+            </div>
+            <h1>
+                <span class="line"><span class="line-inner"><span class="w-bleu">Habitat Tropical</span></span></span>
+                <span class="line"><span class="line-inner"><span class="w-jaune">Bioclimatique</span></span></span>
+            </h1>
+            <p class="hero-sub">
+                Solution écologique et résiliente pour les Antilles.<br>
+                Autonome en énergie et en eau, résistante aux cyclones et séismes — sans climatisation.
+            </p>
+            <div class="hero-btns">
+                <a href="#gammes" class="btn-glow">Découvrir nos gammes <span class="arrow">→</span></a>
+                <a href="#contact" class="btn-outline">Demander un devis</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-bar"></div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-group">
+                <div class="marquee-item"><div class="marquee-icon mi-bleu">💧</div><div><div class="marquee-val">11 000L</div><div class="marquee-label">Citerne intégrée</div></div></div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item"><div class="marquee-icon mi-jaune">☀️</div><div><div class="marquee-val">70%</div><div class="marquee-label">Réduction énergétique</div></div></div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item"><div class="marquee-icon mi-vert">♻️</div><div><div class="marquee-val">60%</div><div class="marquee-label">Réduction CO₂</div></div></div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item"><div class="marquee-icon mi-marron">🌍</div><div><div class="marquee-val">90%</div><div class="marquee-label">Matériaux locaux</div></div></div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item"><div class="marquee-icon mi-jaune">🌀</div><div><div class="marquee-val">Cat. 5</div><div class="marquee-label">Résistance cyclonique</div></div></div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item">
+                    <div class="marquee-icon mi-corail">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c45545" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l3-9 4 18 4-18 3 9h3"/></svg>
+                    </div>
+                    <div><div class="marquee-val">Eurocode 8</div><div class="marquee-label">Résistance sismique</div></div>
+                </div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item"><div class="marquee-icon mi-vert">👷</div><div><div class="marquee-val">150</div><div class="marquee-label">Emplois directs</div></div></div>
+                <div class="marquee-dot"></div>
+            </div>
+            <!-- duplicate for seamless loop -->
+            <div class="marquee-group">
+                <div class="marquee-item"><div class="marquee-icon mi-bleu">💧</div><div><div class="marquee-val">11 000L</div><div class="marquee-label">Citerne intégrée</div></div></div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item"><div class="marquee-icon mi-jaune">☀️</div><div><div class="marquee-val">70%</div><div class="marquee-label">Réduction énergétique</div></div></div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item"><div class="marquee-icon mi-vert">♻️</div><div><div class="marquee-val">60%</div><div class="marquee-label">Réduction CO₂</div></div></div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item"><div class="marquee-icon mi-marron">🌍</div><div><div class="marquee-val">90%</div><div class="marquee-label">Matériaux locaux</div></div></div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item"><div class="marquee-icon mi-jaune">🌀</div><div><div class="marquee-val">Cat. 5</div><div class="marquee-label">Résistance cyclonique</div></div></div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item">
+                    <div class="marquee-icon mi-corail">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c45545" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l3-9 4 18 4-18 3 9h3"/></svg>
+                    </div>
+                    <div><div class="marquee-val">Eurocode 8</div><div class="marquee-label">Résistance sismique</div></div>
+                </div>
+                <div class="marquee-dot"></div>
+                <div class="marquee-item"><div class="marquee-icon mi-vert">👷</div><div><div class="marquee-val">150</div><div class="marquee-label">Emplois directs</div></div></div>
+                <div class="marquee-dot"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- GALLERY + CAROUSEL -->
+    <section class="section" style="background: var(--bg); margin: 0; max-width: none; position: relative; z-index: 1;">
+        <div class="section-diag-pattern"></div>
+        <div class="section-color-bar" style="background:linear-gradient(90deg,var(--marron),var(--jaune),var(--vert));"></div>
+        <div style="position:absolute;top:-40px;left:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(125,94,53,0.08) 0%,transparent 65%);pointer-events:none;z-index:0;"></div>
+        <div style="position:absolute;bottom:-60px;right:-50px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(36,120,160,0.07) 0%,transparent 65%);pointer-events:none;z-index:0;"></div>
+        <div style="max-width: 1280px; margin: 0 auto;">
+            <div data-r>
+                <span class="section-tag tag-marron">Le projet</span>
+                <h2 class="section-h">Découvrez la Maison<br><em>Sécurité Climatique</em></h2>
+                <p class="section-p">Conçue pour résister aux aléas tropicaux tout en offrant un confort de vie optimal et une autonomie énergétique totale.</p>
+            </div>
+            <div class="gallery" data-r data-r-d="2">
+                <div class="gal-item big">
+                    <div class="gal-visual" style="background:linear-gradient(180deg,#8ec8e8 0%,#b8dff0 20%,#d4ecf8 45%,#c0dfc8 68%,#90bc98 100%);">
+                        <svg viewBox="0 0 360 480" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                            <!-- Sun glow -->
+                            <circle cx="308" cy="55" r="52" fill="#f0c050" opacity="0.18"/>
+                            <circle cx="308" cy="55" r="34" fill="#e8a820" opacity="0.22"/>
+                            <!-- Clouds -->
+                            <g fill="white" opacity="0.6">
+                                <ellipse cx="70" cy="78" rx="42" ry="16"/>
+                                <ellipse cx="100" cy="66" rx="28" ry="12"/>
+                                <ellipse cx="46" cy="86" rx="22" ry="10"/>
+                            </g>
+                            <!-- Ground -->
+                            <rect y="380" width="360" height="100" fill="#2d8a4e" opacity="0.32"/>
+                            <!-- Walkway -->
+                            <path d="M148 480 L162 380 L198 380 L213 480" fill="#c4a882" opacity="0.38"/>
+                            <!-- Foundation -->
+                            <rect x="62" y="362" width="236" height="20" fill="#7d5e35" opacity="0.42" rx="2"/>
+                            <!-- House walls -->
+                            <rect x="70" y="215" width="220" height="150" fill="#f2f6f9" stroke="#b0c4cc" stroke-width="1" rx="1"/>
+                            <!-- Wall shadow right -->
+                            <rect x="275" y="215" width="15" height="150" fill="#c0ccd4" opacity="0.38"/>
+                            <!-- Roof -->
+                            <polygon points="48,217 180,118 312,217" fill="#2478a0" opacity="0.8"/>
+                            <polygon points="48,217 180,118 114,168" fill="white" opacity="0.07"/>
+                            <line x1="44" y1="217" x2="316" y2="217" stroke="#1d6586" stroke-width="2.2"/>
+                            <!-- Solar panels -->
+                            <g opacity="0.72">
+                                <rect x="140" y="152" width="80" height="44" fill="#1a3550" rx="1"/>
+                                <line x1="140" y1="167" x2="220" y2="167" stroke="#4a9dc0" stroke-width="0.8"/>
+                                <line x1="140" y1="182" x2="220" y2="182" stroke="#4a9dc0" stroke-width="0.8"/>
+                                <line x1="162" y1="152" x2="162" y2="196" stroke="#4a9dc0" stroke-width="0.8"/>
+                                <line x1="181" y1="152" x2="181" y2="196" stroke="#4a9dc0" stroke-width="0.8"/>
+                                <line x1="200" y1="152" x2="200" y2="196" stroke="#4a9dc0" stroke-width="0.8"/>
+                                <path d="M218 156 L224 150 L230 156" stroke="#f0c050" stroke-width="1.2" opacity="0.5" fill="none"/>
+                            </g>
+                            <!-- Terrace posts left -->
+                            <rect x="76" y="283" width="5" height="79" fill="#7d5e35" opacity="0.52" rx="1"/>
+                            <rect x="106" y="283" width="4" height="79" fill="#7d5e35" opacity="0.52" rx="1"/>
+                            <rect x="134" y="283" width="4" height="79" fill="#7d5e35" opacity="0.52" rx="1"/>
+                            <!-- Terrace beam -->
+                            <rect x="74" y="278" width="66" height="6" fill="#564022" opacity="0.45" rx="1"/>
+                            <!-- Terrace rail -->
+                            <rect x="76" y="318" width="62" height="3" fill="#7d5e35" opacity="0.42" rx="1"/>
+                            <rect x="76" y="330" width="62" height="2" fill="#7d5e35" opacity="0.3" rx="1"/>
+                            <!-- Terrace shade -->
+                            <rect x="76" y="284" width="62" height="78" fill="#4a9dc0" opacity="0.05"/>
+                            <!-- Window left — jalousie -->
+                            <rect x="90" y="232" width="50" height="36" fill="#b8dff0" opacity="0.44" stroke="#2478a0" stroke-width="1" rx="1"/>
+                            <line x1="90" y1="240" x2="140" y2="236" stroke="#2478a0" stroke-width="0.75" opacity="0.6"/>
+                            <line x1="90" y1="247" x2="140" y2="243" stroke="#2478a0" stroke-width="0.75" opacity="0.6"/>
+                            <line x1="90" y1="254" x2="140" y2="250" stroke="#2478a0" stroke-width="0.75" opacity="0.6"/>
+                            <line x1="90" y1="261" x2="140" y2="257" stroke="#2478a0" stroke-width="0.75" opacity="0.6"/>
+                            <!-- Door -->
+                            <rect x="164" y="298" width="42" height="67" fill="#c4a882" opacity="0.52" stroke="#7d5e35" stroke-width="1" rx="1"/>
+                            <rect x="169" y="303" width="32" height="24" fill="#9a7a50" opacity="0.28" rx="1"/>
+                            <rect x="169" y="332" width="32" height="24" fill="#9a7a50" opacity="0.28" rx="1"/>
+                            <circle cx="201" cy="324" r="2.5" fill="#7d5e35" opacity="0.65"/>
+                            <!-- Window right — jalousie -->
+                            <rect x="222" y="232" width="56" height="36" fill="#b8dff0" opacity="0.44" stroke="#2478a0" stroke-width="1" rx="1"/>
+                            <line x1="222" y1="240" x2="278" y2="236" stroke="#2478a0" stroke-width="0.75" opacity="0.6"/>
+                            <line x1="222" y1="247" x2="278" y2="243" stroke="#2478a0" stroke-width="0.75" opacity="0.6"/>
+                            <line x1="222" y1="254" x2="278" y2="250" stroke="#2478a0" stroke-width="0.75" opacity="0.6"/>
+                            <line x1="222" y1="261" x2="278" y2="257" stroke="#2478a0" stroke-width="0.75" opacity="0.6"/>
+                            <!-- Ventilation grille low (bioclimatic) -->
+                            <rect x="126" y="348" width="34" height="10" fill="none" stroke="#2d8a4e" stroke-width="0.9" rx="1" opacity="0.58"/>
+                            <line x1="131" y1="348" x2="131" y2="358" stroke="#2d8a4e" stroke-width="0.7" opacity="0.48"/>
+                            <line x1="136" y1="348" x2="136" y2="358" stroke="#2d8a4e" stroke-width="0.7" opacity="0.48"/>
+                            <line x1="141" y1="348" x2="141" y2="358" stroke="#2d8a4e" stroke-width="0.7" opacity="0.48"/>
+                            <line x1="146" y1="348" x2="146" y2="358" stroke="#2d8a4e" stroke-width="0.7" opacity="0.48"/>
+                            <line x1="151" y1="348" x2="151" y2="358" stroke="#2d8a4e" stroke-width="0.7" opacity="0.48"/>
+                            <!-- Ventilation grille high -->
+                            <rect x="224" y="218" width="28" height="9" fill="none" stroke="#2d8a4e" stroke-width="0.9" rx="1" opacity="0.52"/>
+                            <line x1="229" y1="218" x2="229" y2="227" stroke="#2d8a4e" stroke-width="0.7" opacity="0.44"/>
+                            <line x1="234" y1="218" x2="234" y2="227" stroke="#2d8a4e" stroke-width="0.7" opacity="0.44"/>
+                            <line x1="239" y1="218" x2="239" y2="227" stroke="#2d8a4e" stroke-width="0.7" opacity="0.44"/>
+                            <!-- Underground cistern hint -->
+                            <ellipse cx="300" cy="370" rx="28" ry="7" fill="#2478a0" opacity="0.1" stroke="#2478a0" stroke-width="0.8" stroke-dasharray="4 3"/>
+                            <text x="300" y="374" text-anchor="middle" font-family="Poppins,sans-serif" font-size="6.5" fill="#2478a0" opacity="0.35" font-weight="600">11 000 L</text>
+                            <!-- Palm tree left -->
+                            <path d="M25 480 C28 435,32 390,36 350 C38 328,40 308,42 285" stroke="#7d5e35" stroke-width="7" stroke-linecap="round" fill="none"/>
+                            <path d="M42 285 C28 266,10 248,-8 236" stroke="#2d8a4e" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.82"/>
+                            <path d="M42 285 C34 258,26 232,24 207" stroke="#4aaa6c" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.75"/>
+                            <path d="M42 285 C52 262,62 240,72 226" stroke="#2d8a4e" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.82"/>
+                            <path d="M42 285 C55 272,70 264,84 262" stroke="#4aaa6c" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.68"/>
+                            <path d="M42 285 C25 284,6 286,-8 290" stroke="#2d8a4e" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+                            <circle cx="47" cy="292" r="5.5" fill="#7d5e35" opacity="0.52"/>
+                            <circle cx="40" cy="287" r="4.5" fill="#564022" opacity="0.42"/>
+                            <!-- Tropical plant right -->
+                            <path d="M348 480 C348 445,348 410,348 382" stroke="#7d5e35" stroke-width="5" stroke-linecap="round" fill="none"/>
+                            <path d="M348 382 C330 360,314 348,300 344" stroke="#4aaa6c" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.72"/>
+                            <path d="M348 382 C346 357,350 332,352 312" stroke="#2d8a4e" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.68"/>
+                            <path d="M348 382 C363 360,373 346,368 330" stroke="#4aaa6c" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+                            <path d="M348 382 C368 376,378 372,360 368" stroke="#2d8a4e" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.52"/>
+                        </svg>
+                    </div>
+                    <div class="gal-overlay">
+                        <span class="gal-chip">VUE PRINCIPALE</span><br>
+                        <span class="gal-text">Terrasse couverte & balcon bioclimatique</span>
+                    </div>
+                </div>
+                <div class="gal-item">
+                    <div class="gal-visual" style="background:linear-gradient(140deg,#d0eee8 0%,#e4f4f0 45%,#c8dff0 100%);">
+                        <svg viewBox="0 0 320 230" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                            <!-- House cross-section outline -->
+                            <rect x="55" y="55" width="210" height="140" fill="#f0f5f8" stroke="#2478a0" stroke-width="1.5" rx="2"/>
+                            <!-- Roof triangle -->
+                            <polygon points="44,57 160,12 276,57" fill="#2478a0" opacity="0.55"/>
+                            <line x1="40" y1="57" x2="280" y2="57" stroke="#1d6586" stroke-width="1.5"/>
+                            <!-- Interior divider (central room) -->
+                            <line x1="160" y1="57" x2="160" y2="195" stroke="#b0c4cc" stroke-width="1" stroke-dasharray="5 3" opacity="0.5"/>
+                            <!-- Floor -->
+                            <rect x="55" y="185" width="210" height="10" fill="#c4a882" opacity="0.35" rx="1"/>
+                            <!-- Ground -->
+                            <rect x="0" y="195" width="320" height="35" fill="#2d8a4e" opacity="0.2"/>
+                            <!-- Left grille (low, alizés entry) -->
+                            <rect x="55" y="145" width="18" height="32" fill="#d0eee8" stroke="#2d8a4e" stroke-width="1.2" rx="1"/>
+                            <line x1="55" y1="152" x2="73" y2="152" stroke="#2d8a4e" stroke-width="0.8"/>
+                            <line x1="55" y1="159" x2="73" y2="159" stroke="#2d8a4e" stroke-width="0.8"/>
+                            <line x1="55" y1="166" x2="73" y2="166" stroke="#2d8a4e" stroke-width="0.8"/>
+                            <line x1="55" y1="173" x2="73" y2="173" stroke="#2d8a4e" stroke-width="0.8"/>
+                            <!-- Right grille (high, warm air exit) -->
+                            <rect x="247" y="72" width="18" height="30" fill="#fce8c8" stroke="#e8a820" stroke-width="1.2" rx="1"/>
+                            <line x1="247" y1="79" x2="265" y2="79" stroke="#e8a820" stroke-width="0.8"/>
+                            <line x1="247" y1="86" x2="265" y2="86" stroke="#e8a820" stroke-width="0.8"/>
+                            <line x1="247" y1="93" x2="265" y2="93" stroke="#e8a820" stroke-width="0.8"/>
+                            <line x1="247" y1="100" x2="265" y2="100" stroke="#e8a820" stroke-width="0.8"/>
+                            <!-- Cool air arrows entering left (blue) -->
+                            <g stroke="#2478a0" stroke-width="1.4" fill="none" opacity="0.75">
+                                <path d="M5 155 L50 155"/>
+                                <path d="M44 150 L52 155 L44 160"/>
+                            </g>
+                            <g stroke="#2478a0" stroke-width="1.1" fill="none" opacity="0.55">
+                                <path d="M5 165 L40 165"/>
+                                <path d="M34 160 L42 165 L34 170"/>
+                            </g>
+                            <!-- Air flow inside — cool rises and crosses -->
+                            <path d="M78 162 C100 158, 120 145, 140 130 C155 118, 158 100, 160 82" stroke="#2478a0" stroke-width="1.2" fill="none" opacity="0.5" stroke-dasharray="5 3"/>
+                            <path d="M155 82 L162 75 L168 84" stroke="#2478a0" stroke-width="1.2" fill="none" opacity="0.5"/>
+                            <!-- Warm air crosses and exits high right -->
+                            <path d="M160 82 C168 90, 195 100, 220 110 C238 118, 248 108, 252 95" stroke="#e8a820" stroke-width="1.2" fill="none" opacity="0.55" stroke-dasharray="5 3"/>
+                            <path d="M248 90 L255 83 L262 90" stroke="#e8a820" stroke-width="1.2" fill="none" opacity="0.5"/>
+                            <!-- Hot air arrows exiting right (orange) -->
+                            <g stroke="#c45545" stroke-width="1.4" fill="none" opacity="0.65">
+                                <path d="M270 85 L310 78"/>
+                                <path d="M304 73 L312 78 L305 83"/>
+                            </g>
+                            <g stroke="#c45545" stroke-width="1.1" fill="none" opacity="0.45">
+                                <path d="M270 95 L305 90"/>
+                                <path d="M299 85 L307 90 L300 95"/>
+                            </g>
+                            <!-- Wind origin arrows (outside left) -->
+                            <text x="6" y="148" font-family="Poppins,sans-serif" font-size="7.5" fill="#2478a0" opacity="0.65" font-weight="600">Alizés</text>
+                            <!-- Exit label -->
+                            <text x="272" y="74" font-family="Poppins,sans-serif" font-size="7" fill="#c45545" opacity="0.65" font-weight="600">Chaleur</text>
+                            <!-- Temperature gradient fill inside house (very subtle) -->
+                            <defs>
+                                <linearGradient id="tempGrad" x1="0" y1="0" x2="1" y2="0">
+                                    <stop offset="0%" stop-color="#4a9dc0" stop-opacity="0.07"/>
+                                    <stop offset="50%" stop-color="#4aaa6c" stop-opacity="0.04"/>
+                                    <stop offset="100%" stop-color="#e8a820" stop-opacity="0.07"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="56" y="58" width="208" height="126" fill="url(#tempGrad)" rx="1"/>
+                            <!-- Small furniture hint inside -->
+                            <rect x="80" y="165" width="35" height="18" fill="#7d5e35" opacity="0.1" rx="2"/>
+                            <rect x="190" y="160" width="40" height="22" fill="#7d5e35" opacity="0.08" rx="2"/>
+                        </svg>
+                    </div>
+                    <div class="gal-overlay">
+                        <span class="gal-chip">VUE ARRIÈRE</span><br>
+                        <span class="gal-text">Ventilation naturelle croisée</span>
+                    </div>
+                </div>
+                <div class="gal-item">
+                    <div class="gal-visual" style="background:linear-gradient(150deg,#ede8e2 0%,#f2ece6 45%,#e4ddd6 100%);">
+                        <svg viewBox="0 0 320 230" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                            <!-- House plan outline (top view / coupe) -->
+                            <!-- Outer walls thick -->
+                            <rect x="30" y="25" width="260" height="180" fill="#d8d0c8" stroke="#7d5e35" stroke-width="2" rx="2"/>
+                            <rect x="44" y="39" width="232" height="152" fill="#f2ece6" rx="1"/>
+                            <!-- Interior central wall (floor plan) -->
+                            <line x1="155" y1="39" x2="155" y2="191" stroke="#c0b4a8" stroke-width="6"/>
+                            <line x1="44" y1="120" x2="155" y2="120" stroke="#c0b4a8" stroke-width="4"/>
+                            <!-- Refuge room — bottom left corner, thick walls -->
+                            <!-- Thick wall overlay for refuge -->
+                            <rect x="30" y="130" width="115" height="75" fill="#b8a898" stroke="#7d5e35" stroke-width="1.5" rx="1"/>
+                            <!-- Inner refuge space -->
+                            <rect x="52" y="146" width="74" height="46" fill="#faf6f2" rx="1"/>
+                            <!-- Rebar pattern in thick refuge walls -->
+                            <!-- Bottom wall rebars -->
+                            <g stroke="#c45545" stroke-width="0.6" opacity="0.45">
+                                <line x1="35" y1="175" x2="145" y2="175"/>
+                                <line x1="35" y1="183" x2="145" y2="183"/>
+                                <line x1="35" y1="191" x2="145" y2="191"/>
+                                <line x1="40" y1="131" x2="40" y2="205"/>
+                                <line x1="52" y1="131" x2="52" y2="205"/>
+                                <line x1="64" y1="131" x2="64" y2="205"/>
+                                <line x1="76" y1="131" x2="76" y2="205"/>
+                                <line x1="88" y1="131" x2="88" y2="205"/>
+                                <line x1="100" y1="131" x2="100" y2="205"/>
+                                <line x1="112" y1="131" x2="112" y2="205"/>
+                                <line x1="124" y1="131" x2="124" y2="205"/>
+                                <line x1="136" y1="131" x2="136" y2="205"/>
+                            </g>
+                            <!-- Left wall rebars -->
+                            <g stroke="#c45545" stroke-width="0.6" opacity="0.45">
+                                <line x1="30" y1="135" x2="30" y2="205"/>
+                                <line x1="38" y1="131" x2="38" y2="205"/>
+                            </g>
+                            <!-- Refuge inner space fill -->
+                            <rect x="53" y="147" width="72" height="44" fill="#faf6f2"/>
+                            <!-- 12m² label inside refuge -->
+                            <text x="89" y="174" text-anchor="middle" font-family="Poppins,sans-serif" font-size="13" fill="#7d5e35" opacity="0.7" font-weight="700">12 m²</text>
+                            <text x="89" y="184" text-anchor="middle" font-family="Poppins,sans-serif" font-size="6.5" fill="#7d5e35" opacity="0.5" font-weight="600" letter-spacing="0.05em">REFUGE BÉTON</text>
+                            <!-- Refuge door symbol -->
+                            <path d="M52 170 Q52 155 65 153" stroke="#7d5e35" stroke-width="1" fill="none" opacity="0.5"/>
+                            <line x1="52" y1="147" x2="52" y2="173" stroke="#564022" stroke-width="1.5" opacity="0.6"/>
+                            <!-- Dimension arrow horizontal -->
+                            <line x1="53" y1="141" x2="125" y2="141" stroke="#7d5e35" stroke-width="0.7" opacity="0.4"/>
+                            <line x1="53" y1="138" x2="53" y2="144" stroke="#7d5e35" stroke-width="0.7" opacity="0.4"/>
+                            <line x1="125" y1="138" x2="125" y2="144" stroke="#7d5e35" stroke-width="0.7" opacity="0.4"/>
+                            <!-- Dimension arrow vertical -->
+                            <line x1="128" y1="147" x2="128" y2="191" stroke="#7d5e35" stroke-width="0.7" opacity="0.4"/>
+                            <line x1="125" y1="147" x2="131" y2="147" stroke="#7d5e35" stroke-width="0.7" opacity="0.4"/>
+                            <line x1="125" y1="191" x2="131" y2="191" stroke="#7d5e35" stroke-width="0.7" opacity="0.4"/>
+                            <!-- Rest of house (lighter) -->
+                            <text x="210" y="118" text-anchor="middle" font-family="Poppins,sans-serif" font-size="8" fill="#564022" opacity="0.28" font-weight="500">SÉJOUR</text>
+                            <text x="210" y="165" text-anchor="middle" font-family="Poppins,sans-serif" font-size="8" fill="#564022" opacity="0.28" font-weight="500">CHAMBRES</text>
+                            <text x="100" y="82" text-anchor="middle" font-family="Poppins,sans-serif" font-size="8" fill="#564022" opacity="0.28" font-weight="500">CUISINE</text>
+                            <!-- Wall thickness label -->
+                            <line x1="30" y1="22" x2="44" y2="22" stroke="#c45545" stroke-width="0.8" opacity="0.5"/>
+                            <line x1="30" y1="19" x2="30" y2="25" stroke="#c45545" stroke-width="0.8" opacity="0.5"/>
+                            <line x1="44" y1="19" x2="44" y2="25" stroke="#c45545" stroke-width="0.8" opacity="0.5"/>
+                            <text x="37" y="18" text-anchor="middle" font-family="Poppins,sans-serif" font-size="6" fill="#c45545" opacity="0.55" font-weight="600">30cm</text>
+                            <!-- Shield badge overlay -->
+                            <circle cx="254" cy="56" r="22" fill="#c45545" opacity="0.1" stroke="#c45545" stroke-width="1" stroke-dasharray="3 2"/>
+                            <text x="254" y="60" text-anchor="middle" font-family="Poppins,sans-serif" font-size="18" fill="#c45545" opacity="0.35">🛡</text>
+                        </svg>
+                    </div>
+                    <div class="gal-overlay">
+                        <span class="gal-chip">SÉCURITÉ</span><br>
+                        <span class="gal-text">Refuge intégré 12m² béton armé</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CAROUSEL -->
+        <div class="carousel-section" data-r data-r-d="3">
+            <div class="carousel-inner-wrap">
+                <div class="carousel-header">
+                    <div class="carousel-header-text">
+                        <h3>Galerie du projet</h3>
+                        <p>Explorez les détails de la Maison Sécurité Climatique</p>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-btn" id="carPrev" aria-label="Précédent">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <span class="carousel-counter" id="carCounter">1 / 4</span>
+                        <button class="carousel-btn" id="carNext" aria-label="Suivant">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track" id="carTrack">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide">
+                            <div class="slide-visual" style="background:linear-gradient(145deg,#0e2236 0%,#1a3a56 40%,#2478a0 100%);">
+                                <svg viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                                    <!-- PSE panel layer diagram — wall cross-section -->
+                                    <!-- Outer concrete layer left -->
+                                    <rect x="60" y="40" width="32" height="160" fill="#6a8090" opacity="0.7" rx="1"/>
+                                    <!-- Rebar in left concrete -->
+                                    <g stroke="#c45545" stroke-width="1" opacity="0.5">
+                                        <line x1="70" y1="40" x2="70" y2="200"/>
+                                        <line x1="80" y1="40" x2="80" y2="200"/>
+                                        <line x1="60" y1="60" x2="92" y2="60"/>
+                                        <line x1="60" y1="80" x2="92" y2="80"/>
+                                        <line x1="60" y1="100" x2="92" y2="100"/>
+                                        <line x1="60" y1="120" x2="92" y2="120"/>
+                                        <line x1="60" y1="140" x2="92" y2="140"/>
+                                        <line x1="60" y1="160" x2="92" y2="160"/>
+                                        <line x1="60" y1="180" x2="92" y2="180"/>
+                                    </g>
+                                    <!-- PSE center layer (wide, blue tinted) -->
+                                    <rect x="92" y="40" width="196" height="160" fill="#1a3a56" opacity="0.85" rx="1"/>
+                                    <!-- PSE texture (honeycomb/foam pattern) -->
+                                    <g stroke="#4a9dc0" stroke-width="0.6" opacity="0.25">
+                                        <line x1="92" y1="55" x2="288" y2="55"/>
+                                        <line x1="92" y1="70" x2="288" y2="70"/>
+                                        <line x1="92" y1="85" x2="288" y2="85"/>
+                                        <line x1="92" y1="100" x2="288" y2="100"/>
+                                        <line x1="92" y1="115" x2="288" y2="115"/>
+                                        <line x1="92" y1="130" x2="288" y2="130"/>
+                                        <line x1="92" y1="145" x2="288" y2="145"/>
+                                        <line x1="92" y1="160" x2="288" y2="160"/>
+                                        <line x1="92" y1="175" x2="288" y2="175"/>
+                                        <line x1="92" y1="190" x2="288" y2="190"/>
+                                        <line x1="112" y1="40" x2="112" y2="200"/>
+                                        <line x1="132" y1="40" x2="132" y2="200"/>
+                                        <line x1="152" y1="40" x2="152" y2="200"/>
+                                        <line x1="172" y1="40" x2="172" y2="200"/>
+                                        <line x1="192" y1="40" x2="192" y2="200"/>
+                                        <line x1="212" y1="40" x2="212" y2="200"/>
+                                        <line x1="232" y1="40" x2="232" y2="200"/>
+                                        <line x1="252" y1="40" x2="252" y2="200"/>
+                                        <line x1="272" y1="40" x2="272" y2="200"/>
+                                    </g>
+                                    <!-- PSE label -->
+                                    <text x="190" y="124" text-anchor="middle" font-family="Poppins,sans-serif" font-size="20" fill="#4a9dc0" opacity="0.4" font-weight="800" letter-spacing="2">PSE</text>
+                                    <text x="190" y="140" text-anchor="middle" font-family="Poppins,sans-serif" font-size="9" fill="#4a9dc0" opacity="0.3" font-weight="600">30 cm</text>
+                                    <!-- Outer concrete layer right -->
+                                    <rect x="288" y="40" width="32" height="160" fill="#6a8090" opacity="0.7" rx="1"/>
+                                    <!-- Rebar in right concrete -->
+                                    <g stroke="#c45545" stroke-width="1" opacity="0.5">
+                                        <line x1="298" y1="40" x2="298" y2="200"/>
+                                        <line x1="308" y1="40" x2="308" y2="200"/>
+                                        <line x1="288" y1="60" x2="320" y2="60"/>
+                                        <line x1="288" y1="80" x2="320" y2="80"/>
+                                        <line x1="288" y1="100" x2="320" y2="100"/>
+                                        <line x1="288" y1="120" x2="320" y2="120"/>
+                                        <line x1="288" y1="140" x2="320" y2="140"/>
+                                        <line x1="288" y1="160" x2="320" y2="160"/>
+                                        <line x1="288" y1="180" x2="320" y2="180"/>
+                                    </g>
+                                    <!-- Layer labels -->
+                                    <text x="76" y="33" text-anchor="middle" font-family="Poppins,sans-serif" font-size="7.5" fill="#6a8090" opacity="0.7" font-weight="600">BÉTON</text>
+                                    <text x="304" y="33" text-anchor="middle" font-family="Poppins,sans-serif" font-size="7.5" fill="#6a8090" opacity="0.7" font-weight="600">BÉTON</text>
+                                    <!-- Sismo logo dots -->
+                                    <circle cx="38" cy="120" r="4" fill="#4a9dc0" opacity="0.3"/>
+                                    <circle cx="348" cy="120" r="4" fill="#4a9dc0" opacity="0.3"/>
+                                </svg>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-label sl-bleu">STRUCTURE</span>
+                                <div class="slide-title">Structure Posytec / Sismo</div>
+                                <div class="slide-desc">Murs PSE 30 cm + béton armé pour résistance maximale</div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="slide-visual" style="background:linear-gradient(145deg,#0e2820 0%,#1a4030 40%,#2d8a4e 100%);">
+                                <svg viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                                    <!-- House silhouette (cross-section, centered) -->
+                                    <rect x="90" y="80" width="200" height="130" fill="#1a4030" opacity="0.8" stroke="#4aaa6c" stroke-width="1" rx="1"/>
+                                    <polygon points="75,82 190,30 305,82" fill="#2d8a4e" opacity="0.6"/>
+                                    <line x1="72" y1="82" x2="308" y2="82" stroke="#4aaa6c" stroke-width="1.2" opacity="0.7"/>
+                                    <!-- Left grille (low) -->
+                                    <rect x="90" y="152" width="14" height="30" fill="#0e2820" stroke="#4aaa6c" stroke-width="1" rx="0"/>
+                                    <line x1="90" y1="158" x2="104" y2="158" stroke="#4aaa6c" stroke-width="0.8"/>
+                                    <line x1="90" y1="164" x2="104" y2="164" stroke="#4aaa6c" stroke-width="0.8"/>
+                                    <line x1="90" y1="170" x2="104" y2="170" stroke="#4aaa6c" stroke-width="0.8"/>
+                                    <line x1="90" y1="176" x2="104" y2="176" stroke="#4aaa6c" stroke-width="0.8"/>
+                                    <!-- Right grille (high) -->
+                                    <rect x="276" y="92" width="14" height="26" fill="#0e2820" stroke="#4aaa6c" stroke-width="1" rx="0"/>
+                                    <line x1="276" y1="98" x2="290" y2="98" stroke="#4aaa6c" stroke-width="0.8"/>
+                                    <line x1="276" y1="104" x2="290" y2="104" stroke="#4aaa6c" stroke-width="0.8"/>
+                                    <line x1="276" y1="110" x2="290" y2="110" stroke="#4aaa6c" stroke-width="0.8"/>
+                                    <line x1="276" y1="116" x2="290" y2="116" stroke="#4aaa6c" stroke-width="0.8"/>
+                                    <!-- Cool air arrows left exterior -->
+                                    <g stroke="#4a9dc0" stroke-width="1.6" fill="none" opacity="0.8">
+                                        <line x1="20" y1="162" x2="82" y2="162"/>
+                                        <path d="M76 157 L84 162 L76 167"/>
+                                    </g>
+                                    <g stroke="#4a9dc0" stroke-width="1.2" fill="none" opacity="0.55">
+                                        <line x1="28" y1="173" x2="72" y2="173"/>
+                                        <path d="M66 168 L74 173 L66 178"/>
+                                    </g>
+                                    <text x="8" y="155" font-family="Poppins,sans-serif" font-size="7" fill="#4a9dc0" opacity="0.75" font-weight="700">Alizés</text>
+                                    <!-- Air flow inside (diagonal, rising) -->
+                                    <path d="M112 167 C128 152, 148 135, 168 118 C182 106, 188 96, 190 86" stroke="#4aaa6c" stroke-width="1.5" fill="none" opacity="0.55" stroke-dasharray="6 4"/>
+                                    <path d="M185 82 L192 76 L198 84" stroke="#4aaa6c" stroke-width="1.2" fill="none" opacity="0.5"/>
+                                    <!-- Warm air path right -->
+                                    <path d="M190 86 C198 96, 224 108, 252 118 C264 124, 272 116, 278 106" stroke="#e8a820" stroke-width="1.5" fill="none" opacity="0.55" stroke-dasharray="6 4"/>
+                                    <path d="M274 100 L280 93 L286 100" stroke="#e8a820" stroke-width="1.2" fill="none" opacity="0.5"/>
+                                    <!-- Hot air arrows right exterior -->
+                                    <g stroke="#e8a820" stroke-width="1.6" fill="none" opacity="0.75">
+                                        <line x1="298" y1="100" x2="355" y2="90"/>
+                                        <path d="M348 85 L357 90 L350 96"/>
+                                    </g>
+                                    <text x="356" y="87" font-family="Poppins,sans-serif" font-size="7" fill="#e8a820" opacity="0.7" font-weight="700">Chaud</text>
+                                    <!-- Temperature zones inside (subtle) -->
+                                    <ellipse cx="135" cy="155" rx="22" ry="14" fill="#4a9dc0" opacity="0.08"/>
+                                    <ellipse cx="245" cy="105" rx="22" ry="14" fill="#e8a820" opacity="0.08"/>
+                                    <!-- °C labels -->
+                                    <text x="135" y="159" text-anchor="middle" font-family="Poppins,sans-serif" font-size="8" fill="#4a9dc0" opacity="0.4" font-weight="700">24°C</text>
+                                    <text x="245" y="109" text-anchor="middle" font-family="Poppins,sans-serif" font-size="8" fill="#e8a820" opacity="0.4" font-weight="700">32°C</text>
+                                </svg>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-label sl-vert">BIOCLIMATIQUE</span>
+                                <div class="slide-title">Ventilation naturelle croisée</div>
+                                <div class="slide-desc">Grilles orientées alizés, confort sans climatisation</div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <div class="slide-visual" style="background:linear-gradient(145deg,#1e1400 0%,#3a2800 40%,#7a5000 75%,#d09418 100%);">
+                                <svg viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                                    <!-- Sun large -->
+                                    <circle cx="192" cy="65" r="42" fill="#f0c050" opacity="0.25"/>
+                                    <circle cx="192" cy="65" r="30" fill="#e8a820" opacity="0.3"/>
+                                    <circle cx="192" cy="65" r="18" fill="#f0c050" opacity="0.5"/>
+                                    <!-- Sun rays -->
+                                    <g stroke="#f0c050" stroke-width="1.5" opacity="0.35" stroke-linecap="round">
+                                        <line x1="192" y1="12" x2="192" y2="22"/>
+                                        <line x1="224" y1="22" x2="218" y2="30"/>
+                                        <line x1="245" y1="45" x2="236" y2="50"/>
+                                        <line x1="250" y1="65" x2="238" y2="65"/>
+                                        <line x1="245" y1="85" x2="236" y2="80"/>
+                                        <line x1="224" y1="108" x2="218" y2="100"/>
+                                        <line x1="160" y1="22" x2="166" y2="30"/>
+                                        <line x1="139" y1="45" x2="148" y2="50"/>
+                                        <line x1="134" y1="65" x2="146" y2="65"/>
+                                        <line x1="139" y1="85" x2="148" y2="80"/>
+                                        <line x1="160" y1="108" x2="166" y2="100"/>
+                                    </g>
+                                    <!-- Roof slope (house side view) -->
+                                    <polygon points="30,200 192,130 354,200" fill="#3a2800" opacity="0.6"/>
+                                    <line x1="27" y1="200" x2="357" y2="200" stroke="#7a5000" stroke-width="1.5"/>
+                                    <!-- Solar panels on roof (3 panels, perspective) -->
+                                    <!-- Panel 1 left -->
+                                    <rect x="85" y="158" width="58" height="32" fill="#0a2030" opacity="0.85" rx="1" transform="skewX(-8) skewY(4)"/>
+                                    <line x1="86" y1="169" x2="142" y2="169" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(-8) skewY(4)"/>
+                                    <line x1="86" y1="179" x2="142" y2="179" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(-8) skewY(4)"/>
+                                    <line x1="106" y1="158" x2="106" y2="190" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(-8) skewY(4)"/>
+                                    <line x1="124" y1="158" x2="124" y2="190" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(-8) skewY(4)"/>
+                                    <!-- Panel 2 center -->
+                                    <rect x="155" y="148" width="68" height="36" fill="#0a2030" opacity="0.88" rx="1" transform="skewX(-5)"/>
+                                    <line x1="156" y1="160" x2="222" y2="160" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(-5)"/>
+                                    <line x1="156" y1="172" x2="222" y2="172" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(-5)"/>
+                                    <line x1="178" y1="148" x2="178" y2="184" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(-5)"/>
+                                    <line x1="200" y1="148" x2="200" y2="184" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(-5)"/>
+                                    <!-- Panel 3 right -->
+                                    <rect x="232" y="156" width="58" height="32" fill="#0a2030" opacity="0.85" rx="1" transform="skewX(8) skewY(-4)"/>
+                                    <line x1="233" y1="167" x2="289" y2="167" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(8) skewY(-4)"/>
+                                    <line x1="233" y1="177" x2="289" y2="177" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(8) skewY(-4)"/>
+                                    <line x1="252" y1="156" x2="252" y2="188" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(8) skewY(-4)"/>
+                                    <line x1="270" y1="156" x2="270" y2="188" stroke="#2478a0" stroke-width="0.8" opacity="0.6" transform="skewX(8) skewY(-4)"/>
+                                    <!-- Sun rays hitting panels -->
+                                    <g stroke="#f0c050" stroke-width="1" opacity="0.25" stroke-dasharray="4 4">
+                                        <line x1="192" y1="83" x2="120" y2="166"/>
+                                        <line x1="192" y1="83" x2="188" y2="158"/>
+                                        <line x1="192" y1="83" x2="258" y2="163"/>
+                                    </g>
+                                    <!-- Energy indicator -->
+                                    <text x="192" y="220" text-anchor="middle" font-family="Poppins,sans-serif" font-size="9" fill="#f0c050" opacity="0.4" font-weight="700" letter-spacing="0.05em">AUTONOMIE TOTALE</text>
+                                </svg>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-label sl-jaune">ÉNERGIE</span>
+                                <div class="slide-title">Panneaux solaires intégrés</div>
+                                <div class="slide-desc">Autonomie énergétique totale grâce à l'orientation solaire</div>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide">
+                            <div class="slide-visual" style="background:linear-gradient(165deg,#050e18 0%,#0a1e32 35%,#102840 60%,#1a4060 100%);">
+                                <svg viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                                    <!-- Ground line -->
+                                    <line x1="0" y1="140" x2="380" y2="140" stroke="#2478a0" stroke-width="0.8" opacity="0.3"/>
+                                    <!-- House silhouette above ground (simplified) -->
+                                    <rect x="100" y="50" width="180" height="92" fill="#0a1e32" stroke="#2478a0" stroke-width="1" opacity="0.7" rx="1"/>
+                                    <polygon points="88,52 190,12 292,52" fill="#102840" opacity="0.8"/>
+                                    <line x1="86" y1="52" x2="294" y2="52" stroke="#2478a0" stroke-width="1" opacity="0.5"/>
+                                    <!-- Underground section (below ground line) -->
+                                    <rect x="110" y="140" width="160" height="80" fill="#050e18" opacity="0.6" stroke="#2478a0" stroke-width="0.8" stroke-dasharray="4 3" rx="1"/>
+                                    <!-- Cistern shape (rounded top) -->
+                                    <rect x="125" y="148" width="130" height="66" fill="#0a2030" rx="4" stroke="#2478a0" stroke-width="1.2"/>
+                                    <!-- Water inside cistern -->
+                                    <rect x="126" y="175" width="128" height="38" fill="#2478a0" opacity="0.35" rx="3"/>
+                                    <!-- Water surface wave -->
+                                    <path d="M126 175 Q155 170 190 175 Q225 180 254 175" stroke="#4a9dc0" stroke-width="1.2" fill="none" opacity="0.6"/>
+                                    <!-- Water ripples -->
+                                    <ellipse cx="175" cy="185" rx="18" ry="4" stroke="#4a9dc0" stroke-width="0.7" fill="none" opacity="0.25"/>
+                                    <ellipse cx="215" cy="190" rx="12" ry="3" stroke="#4a9dc0" stroke-width="0.7" fill="none" opacity="0.2"/>
+                                    <!-- Capacity label -->
+                                    <text x="190" y="200" text-anchor="middle" font-family="Poppins,sans-serif" font-size="16" fill="#4a9dc0" opacity="0.45" font-weight="800">11 000 L</text>
+                                    <!-- Pipe going up to house -->
+                                    <line x1="190" y1="142" x2="190" y2="148" stroke="#2478a0" stroke-width="3" opacity="0.6"/>
+                                    <rect x="186" y="100" width="8" height="42" fill="#2478a0" opacity="0.4" rx="1"/>
+                                    <!-- Pipe connection to house -->
+                                    <line x1="186" y1="100" x2="160" y2="100" stroke="#2478a0" stroke-width="2" opacity="0.4"/>
+                                    <circle cx="160" cy="100" r="4" fill="#4a9dc0" opacity="0.4"/>
+                                    <!-- Rain collection (roof drain) -->
+                                    <path d="M130 50 L130 80 Q130 85 136 85 L186 100" stroke="#4a9dc0" stroke-width="1.2" fill="none" opacity="0.35" stroke-dasharray="5 3"/>
+                                    <path d="M250 50 L250 80 Q250 85 244 85 L194 100" stroke="#4a9dc0" stroke-width="1.2" fill="none" opacity="0.35" stroke-dasharray="5 3"/>
+                                    <!-- Rain drops -->
+                                    <g fill="#4a9dc0" opacity="0.3">
+                                        <ellipse cx="90" cy="30" rx="2" ry="4"/>
+                                        <ellipse cx="100" cy="20" rx="2" ry="4"/>
+                                        <ellipse cx="80" cy="22" rx="1.5" ry="3.5"/>
+                                        <ellipse cx="300" cy="28" rx="2" ry="4"/>
+                                        <ellipse cx="310" cy="18" rx="2" ry="4"/>
+                                        <ellipse cx="290" cy="22" rx="1.5" ry="3.5"/>
+                                    </g>
+                                    <!-- Depth label -->
+                                    <line x1="98" y1="140" x2="98" y2="214" stroke="#2478a0" stroke-width="0.7" opacity="0.3"/>
+                                    <line x1="95" y1="140" x2="101" y2="140" stroke="#2478a0" stroke-width="0.7" opacity="0.3"/>
+                                    <line x1="95" y1="214" x2="101" y2="214" stroke="#2478a0" stroke-width="0.7" opacity="0.3"/>
+                                    <text x="88" y="182" text-anchor="middle" font-family="Poppins,sans-serif" font-size="6.5" fill="#4a9dc0" opacity="0.4" font-weight="600" transform="rotate(-90 88 182)">Sous-sol</text>
+                                </svg>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-label sl-bleu">EAU</span>
+                                <div class="slide-title">Citerne intégrée 11 000L</div>
+                                <div class="slide-desc">Eau filtrée alimentaire avec protection thermique</div>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="carousel-slide">
+                            <div class="slide-visual" style="background:linear-gradient(145deg,#180a08 0%,#2e1210 40%,#6a2820 75%,#a04035 100%);">
+                                <svg viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                                    <!-- House plan top view — refuge corner highlighted -->
+                                    <!-- Outer wall (house perimeter) -->
+                                    <rect x="55" y="30" width="270" height="180" fill="#2e1210" stroke="#c45545" stroke-width="1" opacity="0.5" rx="2"/>
+                                    <rect x="68" y="43" width="244" height="154" fill="#180a08" opacity="0.6" rx="1"/>
+                                    <!-- Interior walls -->
+                                    <line x1="190" y1="43" x2="190" y2="197" stroke="#5a3028" stroke-width="5" opacity="0.6"/>
+                                    <line x1="68" y1="140" x2="190" y2="140" stroke="#5a3028" stroke-width="4" opacity="0.5"/>
+                                    <!-- REFUGE room — bottom-left corner, ultra thick walls -->
+                                    <rect x="55" y="140" width="128" height="70" fill="#6a2820" opacity="0.55" rx="1" stroke="#c45545" stroke-width="1.5"/>
+                                    <!-- Inner refuge space -->
+                                    <rect x="74" y="155" width="92" height="42" fill="#1a0806" opacity="0.8" rx="1"/>
+                                    <!-- Rebar pattern in refuge walls -->
+                                    <g stroke="#c45545" stroke-width="0.7" opacity="0.4">
+                                        <line x1="60" y1="145" x2="60" y2="210"/>
+                                        <line x1="68" y1="145" x2="68" y2="210"/>
+                                        <line x1="55" y1="150" x2="183" y2="150"/>
+                                        <line x1="55" y1="158" x2="73" y2="158"/>
+                                        <line x1="55" y1="166" x2="73" y2="166"/>
+                                        <line x1="55" y1="174" x2="73" y2="174"/>
+                                        <line x1="55" y1="182" x2="73" y2="182"/>
+                                        <line x1="55" y1="190" x2="183" y2="190"/>
+                                        <line x1="55" y1="198" x2="183" y2="198"/>
+                                        <line x1="55" y1="206" x2="183" y2="206"/>
+                                        <line x1="168" y1="145" x2="168" y2="210"/>
+                                        <line x1="175" y1="145" x2="175" y2="210"/>
+                                        <line x1="183" y1="145" x2="183" y2="210"/>
+                                    </g>
+                                    <!-- Refuge label inside -->
+                                    <text x="120" y="178" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#c45545" opacity="0.65" font-weight="800">REFUGE</text>
+                                    <text x="120" y="190" text-anchor="middle" font-family="Poppins,sans-serif" font-size="8" fill="#c45545" opacity="0.45" font-weight="600">12 m² — BÉTON ARMÉ</text>
+                                    <!-- Shield icon top right -->
+                                    <path d="M300 50 L300 72 Q300 82 310 86 Q320 82 320 72 L320 50 Z" fill="#c45545" opacity="0.3" stroke="#c45545" stroke-width="1.2"/>
+                                    <path d="M306 66 L309 70 L316 60" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                                    <!-- Eurocode 8 label -->
+                                    <text x="310" y="100" text-anchor="middle" font-family="Poppins,sans-serif" font-size="7.5" fill="#c45545" opacity="0.5" font-weight="700">Eurocode 8</text>
+                                    <!-- Seismic wave indicator -->
+                                    <path d="M220 120 L235 120 L240 108 L248 136 L254 104 L260 140 L266 112 L272 128 L278 120 L295 120" stroke="#c45545" stroke-width="1.2" fill="none" opacity="0.35"/>
+                                    <!-- Wall thickness callout -->
+                                    <line x1="55" y1="27" x2="68" y2="27" stroke="#c45545" stroke-width="0.8" opacity="0.45"/>
+                                    <line x1="55" y1="24" x2="55" y2="30" stroke="#c45545" stroke-width="0.8" opacity="0.45"/>
+                                    <line x1="68" y1="24" x2="68" y2="30" stroke="#c45545" stroke-width="0.8" opacity="0.45"/>
+                                    <text x="61" y="23" text-anchor="middle" font-family="Poppins,sans-serif" font-size="6" fill="#c45545" opacity="0.5" font-weight="600">30cm</text>
+                                </svg>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-label sl-corail">SÉCURITÉ</span>
+                                <div class="slide-title">Refuge béton armé 12m²</div>
+                                <div class="slide-desc">Espace sécurisé pour la famille en cas de cyclone ou séisme</div>
+                            </div>
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="carousel-slide">
+                            <div class="slide-visual" style="background:linear-gradient(145deg,#150e06 0%,#2c1e0c 40%,#4a3218 75%,#7d5e35 100%);">
+                                <svg viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                                    <!-- Guadeloupe island silhouette (simplified butterfly shape) -->
+                                    <!-- Grande-Terre (right lobe) -->
+                                    <path d="M220 90 C235 82, 258 80, 275 88 C290 96, 296 112, 290 128 C284 144, 270 152, 252 155 C238 158, 225 150, 218 138 C210 125, 208 105, 220 90Z" fill="#4a3218" opacity="0.7" stroke="#9a7a50" stroke-width="1.2"/>
+                                    <!-- Basse-Terre (left lobe) -->
+                                    <path d="M200 105 C192 92, 182 82, 170 78 C155 73, 140 78, 132 90 C124 103, 122 122, 130 136 C138 150, 152 158, 168 160 C185 162, 198 155, 205 142 C212 128, 210 120, 200 105Z" fill="#564022" opacity="0.7" stroke="#9a7a50" stroke-width="1.2"/>
+                                    <!-- Channel between lobes -->
+                                    <path d="M200 105 C208 112, 215 118, 218 128" stroke="#9a7a50" stroke-width="1" fill="none" opacity="0.4"/>
+                                    <!-- Anse-Bertrand dot (north Grande-Terre) -->
+                                    <circle cx="258" cy="92" r="5" fill="#e8a820" opacity="0.8"/>
+                                    <circle cx="258" cy="92" r="9" fill="#e8a820" opacity="0.15"/>
+                                    <text x="268" y="88" font-family="Poppins,sans-serif" font-size="7.5" fill="#e8a820" opacity="0.8" font-weight="700">Anse-Bertrand</text>
+                                    <!-- Les Abymes dot -->
+                                    <circle cx="248" cy="120" r="4" fill="#4aaa6c" opacity="0.7"/>
+                                    <circle cx="248" cy="120" r="7" fill="#4aaa6c" opacity="0.12"/>
+                                    <text x="256" y="118" font-family="Poppins,sans-serif" font-size="7" fill="#4aaa6c" opacity="0.7" font-weight="600">Les Abymes</text>
+                                    <!-- Material icons around -->
+                                    <!-- PSE block -->
+                                    <rect x="45" y="75" width="40" height="30" fill="#7d5e35" opacity="0.4" rx="2" stroke="#9a7a50" stroke-width="1"/>
+                                    <text x="65" y="94" text-anchor="middle" font-family="Poppins,sans-serif" font-size="7.5" fill="#c4a882" opacity="0.7" font-weight="700">PSE</text>
+                                    <!-- Connection line to Guadeloupe -->
+                                    <line x1="85" y1="90" x2="130" y2="100" stroke="#9a7a50" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.4"/>
+                                    <!-- Concrete block -->
+                                    <rect x="45" y="130" width="40" height="28" fill="#6a8090" opacity="0.4" rx="2" stroke="#8a9aaa" stroke-width="1"/>
+                                    <text x="65" y="148" text-anchor="middle" font-family="Poppins,sans-serif" font-size="7" fill="#b0c4cc" opacity="0.65" font-weight="600">BÉTON</text>
+                                    <line x1="85" y1="144" x2="132" y2="142" stroke="#8a9aaa" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.35"/>
+                                    <!-- Wood/timber block -->
+                                    <rect x="305" y="90" width="42" height="28" fill="#564022" opacity="0.5" rx="2" stroke="#9a7a50" stroke-width="1"/>
+                                    <text x="326" y="108" text-anchor="middle" font-family="Poppins,sans-serif" font-size="7" fill="#c4a882" opacity="0.65" font-weight="600">BOIS LOCAL</text>
+                                    <line x1="305" y1="104" x2="275" y2="110" stroke="#9a7a50" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.35"/>
+                                    <!-- 90% label -->
+                                    <text x="192" y="192" text-anchor="middle" font-family="Poppins,sans-serif" font-size="28" fill="#9a7a50" opacity="0.22" font-weight="900">90%</text>
+                                    <text x="192" y="207" text-anchor="middle" font-family="Poppins,sans-serif" font-size="8.5" fill="#9a7a50" opacity="0.3" font-weight="600" letter-spacing="0.08em">MATÉRIAUX LOCAUX</text>
+                                    <!-- Sea texture around island -->
+                                    <g stroke="#4a9dc0" stroke-width="0.5" opacity="0.1">
+                                        <path d="M100 55 Q140 50 180 55 Q220 60 260 55 Q300 50 340 55"/>
+                                        <path d="M100 65 Q140 60 180 65 Q220 70 260 65 Q300 60 340 65"/>
+                                        <path d="M100 175 Q140 170 180 175 Q220 180 260 175 Q300 170 340 175"/>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-label sl-marron">LOCAL</span>
+                                <div class="slide-title">90% matériaux locaux</div>
+                                <div class="slide-desc">Production PSE en Guadeloupe, circuit court privilégié</div>
+                            </div>
+                        </div>
+                        <!-- Slide 7 -->
+                        <div class="carousel-slide">
+                            <div class="slide-visual" style="background:linear-gradient(160deg,#0a1c14 0%,#142c1e 35%,#1e4030 60%,#2d6040 100%);">
+                                <svg viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                                    <!-- Tropical house perspective sketch -->
+                                    <!-- Sky (subtle gradient rectangles) -->
+                                    <rect x="0" y="0" width="380" height="140" fill="#0a1c14" opacity="0.5"/>
+                                    <!-- Sun hint -->
+                                    <circle cx="320" cy="40" r="28" fill="#f0c050" opacity="0.12"/>
+                                    <circle cx="320" cy="40" r="18" fill="#e8a820" opacity="0.15"/>
+                                    <!-- Ground -->
+                                    <rect y="170" width="380" height="70" fill="#1e4030" opacity="0.6"/>
+                                    <!-- House front facade -->
+                                    <rect x="80" y="100" width="220" height="80" fill="#142c1e" stroke="#4aaa6c" stroke-width="1.2" rx="1"/>
+                                    <!-- Hipped roof -->
+                                    <polygon points="62,102 190,40 318,102" fill="#2d6040" opacity="0.85"/>
+                                    <polygon points="62,102 190,40 126,71" fill="#4aaa6c" opacity="0.15"/>
+                                    <line x1="58" y1="102" x2="322" y2="102" stroke="#4aaa6c" stroke-width="1.5" opacity="0.8"/>
+                                    <!-- Wide overhang -->
+                                    <line x1="52" y1="102" x2="328" y2="102" stroke="#2d6040" stroke-width="3" opacity="0.4"/>
+                                    <!-- Solar panels on roof -->
+                                    <g opacity="0.6">
+                                        <rect x="148" y="64" width="84" height="28" fill="#0a2030" rx="1"/>
+                                        <line x1="148" y1="74" x2="232" y2="74" stroke="#2478a0" stroke-width="0.7"/>
+                                        <line x1="148" y1="84" x2="232" y2="84" stroke="#2478a0" stroke-width="0.7"/>
+                                        <line x1="168" y1="64" x2="168" y2="92" stroke="#2478a0" stroke-width="0.7"/>
+                                        <line x1="190" y1="64" x2="190" y2="92" stroke="#2478a0" stroke-width="0.7"/>
+                                        <line x1="212" y1="64" x2="212" y2="92" stroke="#2478a0" stroke-width="0.7"/>
+                                    </g>
+                                    <!-- Covered terrace left -->
+                                    <rect x="80" y="130" width="72" height="50" fill="#0a1c14" opacity="0.5"/>
+                                    <rect x="86" y="102" width="4" height="68" fill="#4aaa6c" opacity="0.4" rx="1"/>
+                                    <rect x="108" y="102" width="4" height="68" fill="#4aaa6c" opacity="0.4" rx="1"/>
+                                    <rect x="130" y="102" width="4" height="68" fill="#4aaa6c" opacity="0.35" rx="1"/>
+                                    <!-- Terrace rail -->
+                                    <line x1="86" y1="140" x2="150" y2="140" stroke="#4aaa6c" stroke-width="1.2" opacity="0.4"/>
+                                    <!-- Windows jalousie -->
+                                    <rect x="156" y="116" width="52" height="32" fill="#0a2820" opacity="0.6" stroke="#4aaa6c" stroke-width="0.8" rx="1"/>
+                                    <line x1="156" y1="123" x2="208" y2="120" stroke="#4aaa6c" stroke-width="0.7" opacity="0.55"/>
+                                    <line x1="156" y1="130" x2="208" y2="127" stroke="#4aaa6c" stroke-width="0.7" opacity="0.55"/>
+                                    <line x1="156" y1="137" x2="208" y2="134" stroke="#4aaa6c" stroke-width="0.7" opacity="0.55"/>
+                                    <rect x="220" y="116" width="52" height="32" fill="#0a2820" opacity="0.6" stroke="#4aaa6c" stroke-width="0.8" rx="1"/>
+                                    <line x1="220" y1="123" x2="272" y2="120" stroke="#4aaa6c" stroke-width="0.7" opacity="0.55"/>
+                                    <line x1="220" y1="130" x2="272" y2="127" stroke="#4aaa6c" stroke-width="0.7" opacity="0.55"/>
+                                    <line x1="220" y1="137" x2="272" y2="134" stroke="#4aaa6c" stroke-width="0.7" opacity="0.55"/>
+                                    <!-- Door -->
+                                    <rect x="173" y="140" width="34" height="40" fill="#1e4030" opacity="0.5" stroke="#4aaa6c" stroke-width="0.8" rx="1"/>
+                                    <!-- Palm tree left -->
+                                    <path d="M22 240 C26 200,30 170,34 145" stroke="#564022" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+                                    <path d="M34 145 C20 128,4 114,-12 104" stroke="#2d8a4e" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.8"/>
+                                    <path d="M34 145 C28 122,24 98,22 76" stroke="#4aaa6c" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+                                    <path d="M34 145 C44 126,56 110,68 100" stroke="#2d8a4e" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.8"/>
+                                    <!-- Palm right -->
+                                    <path d="M358 240 C354 200,352 170,350 148" stroke="#564022" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                                    <path d="M350 148 C362 128,375 115,390 106" stroke="#4aaa6c" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.72"/>
+                                    <path d="M350 148 C346 126,342 103,340 82" stroke="#2d8a4e" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.65"/>
+                                    <path d="M350 148 C335 130,318 120,302 116" stroke="#4aaa6c" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+                                </svg>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-label sl-vert">INTÉGRATION</span>
+                                <div class="slide-title">Architecture tropicale</div>
+                                <div class="slide-desc">Design intégré au paysage caribéen avec terrasses couvertes</div>
+                            </div>
+                        </div>
+                        <!-- Slide 8 -->
+                        <div class="carousel-slide">
+                            <div class="slide-visual" style="background:linear-gradient(150deg,#1a1200 0%,#2e2000 40%,#5a3e08 70%,#8a6010 100%);">
+                                <svg viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+                                    <!-- Construction site scene -->
+                                    <!-- Ground / site -->
+                                    <rect y="180" width="380" height="60" fill="#2e2000" opacity="0.6"/>
+                                    <!-- Foundation trench -->
+                                    <rect x="60" y="162" width="260" height="20" fill="#1a1200" opacity="0.8" rx="1"/>
+                                    <!-- PSE wall being built -->
+                                    <!-- Left completed section -->
+                                    <rect x="80" y="80" width="60" height="82" fill="#4a3218" opacity="0.8" stroke="#9a7a50" stroke-width="1" rx="1"/>
+                                    <!-- PSE foam texture in completed wall -->
+                                    <g stroke="#7a5a28" stroke-width="0.5" opacity="0.3">
+                                        <line x1="80" y1="90" x2="140" y2="90"/>
+                                        <line x1="80" y1="100" x2="140" y2="100"/>
+                                        <line x1="80" y1="110" x2="140" y2="110"/>
+                                        <line x1="80" y1="120" x2="140" y2="120"/>
+                                        <line x1="80" y1="130" x2="140" y2="130"/>
+                                        <line x1="80" y1="140" x2="140" y2="140"/>
+                                        <line x1="80" y1="150" x2="140" y2="150"/>
+                                        <line x1="95" y1="80" x2="95" y2="162"/>
+                                        <line x1="110" y1="80" x2="110" y2="162"/>
+                                        <line x1="125" y1="80" x2="125" y2="162"/>
+                                    </g>
+                                    <!-- In-progress section (partial wall) -->
+                                    <rect x="140" y="100" width="60" height="62" fill="#564022" opacity="0.7" stroke="#9a7a50" stroke-width="1" rx="1"/>
+                                    <!-- Empty/upcoming section with rebar only -->
+                                    <rect x="200" y="162" width="100" height="6" fill="#5a3e08" opacity="0.8" rx="1"/>
+                                    <g stroke="#c45545" stroke-width="1.2" opacity="0.55">
+                                        <line x1="215" y1="120" x2="215" y2="162"/>
+                                        <line x1="232" y1="115" x2="232" y2="162"/>
+                                        <line x1="249" y1="120" x2="249" y2="162"/>
+                                        <line x1="266" y1="118" x2="266" y2="162"/>
+                                        <line x1="283" y1="122" x2="283" y2="162"/>
+                                        <line x1="200" y1="130" x2="300" y2="130"/>
+                                        <line x1="200" y1="145" x2="300" y2="145"/>
+                                        <line x1="200" y1="158" x2="300" y2="158"/>
+                                    </g>
+                                    <!-- Worker figure (simplified) -->
+                                    <!-- Worker 1 left -->
+                                    <circle cx="165" cy="75" r="9" fill="#e8a820" opacity="0.55"/><!-- helmet -->
+                                    <line x1="165" y1="84" x2="165" y2="115" stroke="#c4a882" stroke-width="3" opacity="0.5"/>
+                                    <line x1="152" y1="100" x2="178" y2="100" stroke="#c4a882" stroke-width="2.5" opacity="0.5"/>
+                                    <line x1="165" y1="115" x2="155" y2="135" stroke="#c4a882" stroke-width="2.5" opacity="0.5"/>
+                                    <line x1="165" y1="115" x2="175" y2="135" stroke="#c4a882" stroke-width="2.5" opacity="0.5"/>
+                                    <!-- Worker 2 right (with tool) -->
+                                    <circle cx="255" cy="88" r="9" fill="#e8a820" opacity="0.45"/>
+                                    <line x1="255" y1="97" x2="255" y2="128" stroke="#c4a882" stroke-width="3" opacity="0.45"/>
+                                    <line x1="242" y1="113" x2="268" y2="113" stroke="#c4a882" stroke-width="2.5" opacity="0.45"/>
+                                    <line x1="255" y1="128" x2="245" y2="148" stroke="#c4a882" stroke-width="2.5" opacity="0.45"/>
+                                    <line x1="255" y1="128" x2="265" y2="148" stroke="#c4a882" stroke-width="2.5" opacity="0.45"/>
+                                    <!-- Tool (shovel) -->
+                                    <line x1="268" y1="113" x2="285" y2="150" stroke="#9a7a50" stroke-width="2" opacity="0.6"/>
+                                    <ellipse cx="286" cy="154" rx="7" ry="5" fill="#9a7a50" opacity="0.5" transform="rotate(-30 286 154)"/>
+                                    <!-- Diploma/certificate -->
+                                    <rect x="295" y="55" width="60" height="44" fill="#5a3e08" opacity="0.6" rx="3" stroke="#e8a820" stroke-width="1"/>
+                                    <line x1="302" y1="68" x2="348" y2="68" stroke="#e8a820" stroke-width="0.8" opacity="0.5"/>
+                                    <line x1="302" y1="76" x2="348" y2="76" stroke="#e8a820" stroke-width="0.8" opacity="0.5"/>
+                                    <line x1="302" y1="84" x2="335" y2="84" stroke="#e8a820" stroke-width="0.8" opacity="0.5"/>
+                                    <circle cx="325" cy="91" r="8" fill="#e8a820" opacity="0.3"/>
+                                    <!-- Anse-Bertrand label -->
+                                    <text x="192" y="215" text-anchor="middle" font-family="Poppins,sans-serif" font-size="9" fill="#e8a820" opacity="0.3" font-weight="700" letter-spacing="0.06em">CHANTIER-ÉCOLE — ANSE-BERTRAND</text>
+                                    <!-- Crane hook suggestion -->
+                                    <line x1="45" y1="20" x2="45" y2="100" stroke="#9a7a50" stroke-width="2" opacity="0.3"/>
+                                    <line x1="45" y1="20" x2="140" y2="20" stroke="#9a7a50" stroke-width="2" opacity="0.3"/>
+                                    <line x1="140" y1="20" x2="140" y2="50" stroke="#9a7a50" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.25"/>
+                                </svg>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-label sl-jaune">FORMATION</span>
+                                <div class="slide-title">Chantier école Anse-Bertrand</div>
+                                <div class="slide-desc">Formation aux techniques de construction bioclimatique</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="carDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wave-divider flip animated-wave">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+            <path d="M0,0 C360,50 720,10 1080,40 C1260,55 1380,20 1440,30 L1440,60 L0,60 Z" fill="var(--bg)"/>
+        </svg>
+    </div>
+
+    <!-- CONCEPT BENTO -->
+    <section class="section" id="concept">
+        <div data-r>
+            <span class="section-tag tag-bleu">Le concept</span>
+            <h2 class="section-h">Cinq piliers pour<br>un habitat <em>durable</em></h2>
+            <p class="section-p">Chaque composant pensé pour le climat caribéen, la sécurité et l'autonomie.</p>
+        </div>
+        <div class="bento">
+            <div class="bc bc-water" data-r data-r-d="1">
+                <div class="bc-inner-glow" style="background: var(--bleu);"></div>
+                <div class="bc-icon ic-bleu">💧</div>
+                <h3>Bioclimatique & Eau</h3>
+                <p>Ventilation naturelle double flux orientée alizés. Citerne intégrée de 11 000 litres d'eau filtrée alimentaire. Confort thermique permanent sans climatisation.</p>
+            </div>
+            <div class="bc bc-cyclone" data-r data-r-d="2">
+                <div class="bc-inner-glow" style="background: var(--jaune);"></div>
+                <div class="bc-stat s-jaune">Cat. 5</div>
+                <div class="bc-icon ic-jaune">🌀</div>
+                <h3>Anti-cyclonique</h3>
+                <p>Structure renforcée résistante aux vents de catégorie 5. Murs pare-toiture contre l'arrachement.</p>
+            </div>
+            <div class="bc bc-seisme" data-r data-r-d="3">
+                <div class="bc-inner-glow" style="background: var(--corail);"></div>
+                <div class="bc-stat s-corail" style="display:flex;align-items:center;gap:0.5rem;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--corail)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l3-9 4 18 4-18 3 9h3"/></svg>
+                </div>
+                <div class="bc-icon ic-corail">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--corail)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l3-9 4 18 4-18 3 9h3"/></svg>
+                </div>
+                <h3>Parasismique</h3>
+                <p>Structure conforme Eurocode 8. Refuge intégré 12m² béton armé pour la sécurité de toute la famille.</p>
+            </div>
+            <div class="bc bc-eco" data-r data-r-d="4">
+                <div class="bc-inner-glow" style="background: var(--vert);"></div>
+                <div class="bc-stat s-vert">−60%</div>
+                <div class="bc-icon ic-vert">♻️</div>
+                <h3>Écologique</h3>
+                <p>Matériaux locaux recyclables. Barrière PSE ignifuge M0/M1. Émissions CO₂ réduites de 60%.</p>
+            </div>
+            <div class="bc bc-sun" data-r data-r-d="5">
+                <div class="bc-inner-glow" style="background: var(--jaune);"></div>
+                <div class="bc-icon ic-jaune">☀️</div>
+                <h3>Énergie solaire</h3>
+                <p>Panneaux solaires + orientation bioclimatique pour une autonomie totale.</p>
+            </div>
+            <div class="bc bc-local" data-r data-r-d="6">
+                <div class="bc-inner-glow" style="background: var(--marron);"></div>
+                <div class="bc-icon ic-marron">🌍</div>
+                <h3>Matériaux locaux</h3>
+                <p>90% sourcés localement. Production PSE en Guadeloupe. Circuit court et emploi local.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAMMES -->
+    <section class="section" id="gammes" style="background: var(--bg); margin: 0; max-width: none; position: relative; z-index: 1;">
+        <div style="max-width: 1280px; margin: 0 auto;">
+            <div data-r>
+                <span class="section-tag tag-vert">Nos gammes</span>
+                <h2 class="section-h">Une maison pour<br>chaque <em>budget</em></h2>
+                <p class="section-p">Trois gammes pensées pour répondre aux besoins de tous les Guadeloupéens.</p>
+            </div>
+            <div class="gammes">
+                <div class="gamme g-coco" data-r data-r-d="1">
+                    <div class="gamme-top"></div>
+                    <div class="gamme-num">01</div>
+                    <span class="gamme-badge">Entrée de gamme</span>
+                    <span class="gamme-emoji">🌴</span>
+                    <h3>Gamme Cocotier</h3>
+                    <p class="gamme-sub">L'essentiel, accessible et sûr</p>
+                    <p>La sécurité climatique rendue accessible. Résistance cyclonique, ventilation bioclimatique et autonomie en eau.</p>
+                    <div class="gamme-feats">
+                        <div class="gf"><div class="gf-dot">✓</div>Ventilation naturelle double flux</div>
+                        <div class="gf"><div class="gf-dot">✓</div>Structure parasismique & anti-cyclonique</div>
+                        <div class="gf"><div class="gf-dot">✓</div>Citerne intégrée</div>
+                    </div>
+                </div>
+                <div class="gamme g-raco" data-r data-r-d="2">
+                    <div class="gamme-top"></div>
+                    <div class="gamme-num">02</div>
+                    <span class="gamme-badge">Intermédiaire</span>
+                    <span class="gamme-emoji">🦝</span>
+                    <h3>Gamme Racoon</h3>
+                    <p class="gamme-sub">Confort et performance</p>
+                    <p>Toutes les protections Cocotier, enrichies de finitions supérieures et d'équipements énergétiques.</p>
+                    <div class="gamme-feats">
+                        <div class="gf"><div class="gf-dot">✓</div>Tout inclus Cocotier +</div>
+                        <div class="gf"><div class="gf-dot">✓</div>Panneaux solaires intégrés</div>
+                        <div class="gf"><div class="gf-dot">✓</div>Refuge sécurisé 12m²</div>
+                    </div>
+                </div>
+                <div class="gamme g-lamb" data-r data-r-d="3">
+                    <div class="gamme-top"></div>
+                    <div class="gamme-num">03</div>
+                    <span class="gamme-badge">Haut de gamme</span>
+                    <span class="gamme-emoji">🐚</span>
+                    <h3>Gamme Lambi</h3>
+                    <p class="gamme-sub">Excellence et autonomie totale</p>
+                    <p>Autonomie énergétique complète, matériaux premium, architecture personnalisée et domotique intégrée.</p>
+                    <div class="gamme-feats">
+                        <div class="gf"><div class="gf-dot">✓</div>Tout inclus Racoon +</div>
+                        <div class="gf"><div class="gf-dot">✓</div>100% autonomie énergétique</div>
+                        <div class="gf"><div class="gf-dot">✓</div>Architecture sur mesure</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INNOVATIONS -->
+    <section class="section" id="innovations">
+        <div data-r>
+            <span class="section-tag tag-jaune">Technologies</span>
+            <h2 class="section-h">Innovations <em>intégrées</em></h2>
+            <p class="section-p">Composants techniques sélectionnés pour leur performance en conditions tropicales.</p>
+        </div>
+        <div class="inno-list" data-r data-r-d="2">
+            <div class="inno-row">
+                <span class="inno-num">01</span>
+                <div><div class="inno-h">Structure Posytec / Sismo</div><p class="inno-p">Murs PSE 30 cm + béton armé — résistance cyclonique et sismique optimale</p></div>
+                <div class="inno-icon">🏗️</div>
+                <div class="inno-progress" style="background:linear-gradient(90deg,var(--bleu),var(--vert));"></div>
+            </div>
+            <div class="inno-row">
+                <span class="inno-num">02</span>
+                <div><div class="inno-h">Ventilation Double Flux</div><p class="inno-p">Grilles basses et hautes orientées selon les alizés</p></div>
+                <div class="inno-icon">🌬️</div>
+                <div class="inno-progress" style="background:linear-gradient(90deg,var(--vert),var(--bleu));"></div>
+            </div>
+            <div class="inno-row">
+                <span class="inno-num">03</span>
+                <div><div class="inno-h">Citerne Intégrée 11 000L</div><p class="inno-p">Eau filtrée alimentaire avec protection anti-échauffement</p></div>
+                <div class="inno-icon">💧</div>
+                <div class="inno-progress" style="background:linear-gradient(90deg,var(--bleu),var(--jaune));"></div>
+            </div>
+            <div class="inno-row">
+                <span class="inno-num">04</span>
+                <div><div class="inno-h">Protection Parasismique</div><p class="inno-p">Conforme Eurocode 8 — structure renforcée et refuge béton armé 12m²</p></div>
+                <div class="inno-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l3-9 4 18 4-18 3 9h3"/></svg>
+                </div>
+                <div class="inno-progress" style="background:linear-gradient(90deg,var(--corail),var(--marron));"></div>
+            </div>
+            <div class="inno-row">
+                <span class="inno-num">05</span>
+                <div><div class="inno-h">Murs Pare-Toiture</div><p class="inno-p">Protection contre l'arrachement cyclonique de la couverture</p></div>
+                <div class="inno-icon">🌀</div>
+                <div class="inno-progress" style="background:linear-gradient(90deg,var(--jaune),var(--corail));"></div>
+            </div>
+            <div class="inno-row">
+                <span class="inno-num">06</span>
+                <div><div class="inno-h">Barrière Anti-Capillarité</div><p class="inno-p">PSE local ignifuge M0/M1, anti-termites et 100% recyclable</p></div>
+                <div class="inno-icon">🛡️</div>
+                <div class="inno-progress" style="background:linear-gradient(90deg,var(--marron),var(--jaune));"></div>
+            </div>
+            <div class="inno-row">
+                <span class="inno-num">07</span>
+                <div><div class="inno-h">Autonomie Énergétique</div><p class="inno-p">Solaire + orientation bioclimatique calculée</p></div>
+                <div class="inno-icon">☀️</div>
+                <div class="inno-progress" style="background:linear-gradient(90deg,var(--jaune),var(--vert));"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="section" id="impact" style="background: var(--bg); margin: 0; max-width: none; position: relative; z-index: 1;">
+        <div style="max-width: 1280px; margin: 0 auto;">
+            <div data-r>
+                <span class="section-tag tag-corail">Impact</span>
+                <h2 class="section-h">Retombées <em>locales</em></h2>
+                <p class="section-p">Un programme qui transforme l'économie guadeloupéenne.</p>
+            </div>
+            <div class="impact">
+                <div class="impact-card" data-r data-r-d="1">
+                    <div class="impact-ic i-marron">👷</div>
+                    <h3>Emplois Locaux</h3>
+                    <p><span class="hl hl-c">150 emplois directs</span> sur les chantiers et la logistique locale.</p>
+                </div>
+                <div class="impact-card" data-r data-r-d="2">
+                    <div class="impact-ic i-vert">🏭</div>
+                    <h3>Production Locale</h3>
+                    <p>Fabrication de la <span class="hl hl-v">barrière PSE en Guadeloupe</span>. Montage sur site.</p>
+                </div>
+                <div class="impact-card" data-r data-r-d="3">
+                    <div class="impact-ic i-jaune">🎓</div>
+                    <h3>Formation</h3>
+                    <p>Chantier école à <span class="hl hl-j">Anse-Bertrand</span> avec la Région Guadeloupe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <div class="partners">
+        <div class="partners-inner" data-r>
+            <p class="partners-label">Nos partenaires institutionnels & techniques</p>
+            <div class="partners-row">
+                <a href="#" class="partner-chip"><span>ADEME Guadeloupe</span><span class="arr">↗</span></a>
+                <a href="#" class="partner-chip"><span>Région Guadeloupe</span><span class="arr">↗</span></a>
+                <a href="#" class="partner-chip"><span>DEAL Guadeloupe</span><span class="arr">↗</span></a>
+                <a href="#" class="partner-chip"><span>Posytec France</span><span class="arr">↗</span></a>
+                <a href="#" class="partner-chip"><span>Sismo France</span><span class="arr">↗</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <div data-r>
+            <span class="section-tag tag-bleu">Contact</span>
+            <h2 class="section-h">Parlons de votre <em>projet</em></h2>
+            <p class="section-p">Contactez l'équipe Vent Martial — Accentium971.</p>
+        </div>
+        <div class="contact-grid" data-r data-r-d="2">
+            <div class="contact-info">
+                <h3>Informations</h3>
+                <div class="ci"><div class="ci-icon">📍</div><span><strong>Sites pilotes</strong><br>Anse-Bertrand & Petit-Pérou (Les Abymes)</span></div>
+                <div class="ci"><div class="ci-icon">📋</div><span><strong>Normes</strong><br>RTAA DOM, Eurocode 8, NF DTU 13.12 et 20.1</span></div>
+                <div class="ci"><div class="ci-icon">🤝</div><span><strong>Porté par</strong><br>Vent Martial / Accentium971</span></div>
+                <div class="ci"><div class="ci-icon">🌴</div><span><strong>3 Gammes</strong><br>Cocotier · Racoon · Lambi</span></div>
+            </div>
+            <div class="form-card">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="fg"><label>Nom complet</label><input type="text" placeholder="Jean Dupont" required></div>
+                        <div class="fg"><label>Téléphone</label><input type="tel" placeholder="+590 6 90 ..."></div>
+                    </div>
+                    <div class="fg"><label>Email</label><input type="email" placeholder="jean@exemple.fr" required></div>
+                    <div class="fg"><label>Message</label><textarea placeholder="Décrivez votre projet..." required></textarea></div>
+                    <button type="submit" class="btn-glow" style="width:100%; justify-content:center;">Envoyer le message <span class="arrow">→</span></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-l" style="display:flex;align-items:center;gap:1rem;">
+                © 2026 MSC — Vent Martial / Accentium971
+                <div class="footer-dots">
+                    <div class="fd" style="background:var(--bleu);color:var(--bleu);"></div>
+                    <div class="fd" style="background:var(--jaune);color:var(--jaune);"></div>
+                    <div class="fd" style="background:var(--vert);color:var(--vert);"></div>
+                    <div class="fd" style="background:var(--marron);color:var(--marron);"></div>
+                </div>
+            </div>
+            <div class="footer-r">RTAA DOM · Eurocode 8 · NF DTU 13.12 · NF DTU 20.1</div>
+        </div>
+    </footer>
+    <script>
+        // ═══ PARTICLE CANVAS — light theme ═══
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const COLORS = [
+            'rgba(36,120,160,0.12)',
+            'rgba(45,138,78,0.1)',
+            'rgba(232,168,32,0.08)',
+            'rgba(125,94,53,0.06)',
+        ];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            }
+        resize();
+        window.addEventListener('resize', resize);
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.2;
+                this.speedY = (Math.random() - 0.5) * 0.2;
+                this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+                this.opacity = Math.random() * 0.4 + 0.1;
+                this.pulse = Math.random() * Math.PI * 2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.pulse += 0.008;
+                if (this.x < -10 || this.x > canvas.width + 10 || this.y < -10 || this.y > canvas.height + 10) this.reset();
+            }
+            draw() {
+                const o = this.opacity * (0.7 + Math.sin(this.pulse) * 0.3);
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color.replace(/[\d.]+\)$/, o + ')');
+                ctx.fill();
+            }
+        }
+
+        const count = Math.min(50, Math.floor(window.innerWidth / 28));
+        for (let i = 0; i < count; i++) particles.push(new Particle());
+
+        function drawLines() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 140) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(36,120,160,${0.025 * (1 - dist / 140)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            drawLines();
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // ═══ SCROLL PROGRESS ═══
+        const progressBar = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (scrollTop / scrollHeight) * 100 + '%';
+        });
+
+        // ═══ NAV SCROLL ═══
+        window.addEventListener('scroll', () => {
+            document.getElementById('navWrap').classList.toggle('scrolled', window.scrollY > 80);
+        });
+
+        // ═══ MOBILE MENU ═══
+        document.getElementById('mobBtn').addEventListener('click', () => document.getElementById('mobNav').classList.add('active'));
+        document.getElementById('mobClose').addEventListener('click', () => document.getElementById('mobNav').classList.remove('active'));
+        document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => document.getElementById('mobNav').classList.remove('active')));
+
+        // ═══ SMOOTH SCROLL ═══
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // ═══ SCROLL REVEAL ═══
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+        }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
+        document.querySelectorAll('[data-r]').forEach(el => obs.observe(el));
+
+        const bentoObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.bento .bc').forEach(el => bentoObs.observe(el));
+
+        const partnerObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.partners-row').forEach(el => partnerObs.observe(el));
+
+        // ═══ COUNTER ═══
+        function animateCounter(el, target, suffix = '', prefix = '') {
+            const duration = 2000;
+            const start = performance.now();
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = prefix + Math.round(eased * target).toLocaleString('fr-FR') + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        }
+        const counterObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting && !e.target.dataset.counted) {
+                    e.target.dataset.counted = 'true';
+                    const text = e.target.textContent.trim();
+                    if (text.includes('11')) animateCounter(e.target, 11000, 'L');
+                    else if (text === '70%') animateCounter(e.target, 70, '%');
+                    else if (text === '60%') animateCounter(e.target, 60, '%');
+                    else if (text === '90%') animateCounter(e.target, 90, '%');
+                    else if (text === '150') animateCounter(e.target, 150);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.marquee-val').forEach(el => counterObs.observe(el));
+
+        // ═══ BUTTON RIPPLE ═══
+        document.querySelectorAll('.btn-glow, .btn-outline').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('btn-ripple');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                this.appendChild(ripple);
+                ripple.addEventListener('animationend', () => ripple.remove());
+            });
+        });
+
+        // ═══ TILT ON HOVER ═══
+        document.querySelectorAll('.bc, .gamme, .impact-card, .terrain-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = `translateY(-4px) perspective(800px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.transition = 'all 0.5s cubic-bezier(0.16,1,0.3,1)';
+            });
+            card.addEventListener('mouseenter', () => { card.style.transition = 'transform 0.1s'; });
+        });
+
+        // ═══ PARALLAX GLOWS ═══
+        window.addEventListener('scroll', () => {
+            const s = window.scrollY;
+            document.querySelectorAll('.hero-glow-1, .hero-glow-2, .hero-glow-3').forEach((g, i) => {
+                g.style.transform = `translateY(${s * (0.08 + i * 0.04)}px)`;
+            });
+        });
+
+        // ═══ FORM ═══
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const orig = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '⏳ Envoi en cours...';
+
+            const formData = {
+                name: this.querySelector('input[type="text"]').value,
+                phone: this.querySelector('input[type="tel"]').value,
+                email: this.querySelector('input[type="email"]').value,
+                message: this.querySelector('textarea').value,
+            };
+
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                });
+                if (res.ok) {
+                    btn.innerHTML = '✓ Message envoyé !';
+                    btn.style.background = 'var(--vert)';
+                    btn.style.boxShadow = '0 4px 20px var(--vert-glow)';
+                    this.reset();
+                } else {
+                    const err = await res.json();
+                    btn.innerHTML = '✗ Erreur — réessayez';
+                    btn.style.background = 'var(--corail)';
+                    console.error('Form error:', err);
+                }
+            } catch (err) {
+                btn.innerHTML = '✗ Erreur réseau';
+                btn.style.background = 'var(--corail)';
+                console.error('Network error:', err);
+            }
+            setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.boxShadow = ''; btn.disabled = false; }, 3000);
+        });
+
+        // ═══ MAGNETIC NAV CTA ═══
+        const navCta = document.querySelector('.nav-cta');
+        if (navCta) {
+            navCta.addEventListener('mousemove', (e) => {
+                const rect = navCta.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                navCta.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+            });
+            navCta.addEventListener('mouseleave', () => { navCta.style.transform = ''; });
+        }
+
+        // ═══ CAROUSEL ═══
+        (function() {
+            const track = document.getElementById('carTrack');
+            const slides = track.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('carPrev');
+            const nextBtn = document.getElementById('carNext');
+            const counter = document.getElementById('carCounter');
+            const dotsContainer = document.getElementById('carDots');
+
+            let current = 0;
+            let slidesPerView = 2;
+            let autoplayTimer;
+            let isDragging = false;
+            let startX = 0;
+            let scrollLeft = 0;
+
+            function getSlidesPerView() {
+                return window.innerWidth <= 768 ? 1 : 2;
+            }
+
+            function getMaxIndex() {
+                return Math.max(0, slides.length - slidesPerView);
+            }
+
+            function buildDots() {
+                dotsContainer.innerHTML = '';
+                const pages = getMaxIndex() + 1;
+                for (let i = 0; i < pages; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'carousel-dot' + (i === current ? ' active' : '');
+                    dot.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateUI() {
+                const slideWidth = slides[0].offsetWidth + 12; // gap
+                track.style.transform = `translateX(-${current * slideWidth}px)`;
+
+                // counter
+                counter.textContent = `${current + 1} / ${getMaxIndex() + 1}`;
+
+                // dots
+                dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
+                });
+
+                // buttons
+                prevBtn.classList.toggle('disabled', current === 0);
+                nextBtn.classList.toggle('disabled', current >= getMaxIndex());
+            }
+
+            function goTo(index) {
+                current = Math.max(0, Math.min(index, getMaxIndex()));
+                updateUI();
+                resetAutoplay();
+            }
+
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+
+            prevBtn.addEventListener('click', prev);
+            nextBtn.addEventListener('click', next);
+
+            // Autoplay
+            function startAutoplay() {
+                autoplayTimer = setInterval(() => {
+                    if (current >= getMaxIndex()) { goTo(0); }
+                    else { next(); }
+                }, 4500);
+            }
+            function resetAutoplay() {
+                clearInterval(autoplayTimer);
+                startAutoplay();
+            }
+
+            // Drag / swipe
+            track.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.pageX;
+                track.style.transition = 'none';
+                track.style.cursor = 'grabbing';
+            });
+            track.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+            });
+            track.addEventListener('mouseup', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                track.style.transition = '';
+                track.style.cursor = '';
+                const diff = e.pageX - startX;
+                if (Math.abs(diff) > 60) {
+                    diff > 0 ? prev() : next();
+                }
+            });
+            track.addEventListener('mouseleave', () => {
+                isDragging = false;
+                track.style.transition = '';
+                track.style.cursor = '';
+            });
+
+            // Touch
+            track.addEventListener('touchstart', (e) => { startX = e.touches[0].pageX; }, { passive: true });
+            track.addEventListener('touchend', (e) => {
+                const diff = e.changedTouches[0].pageX - startX;
+                if (Math.abs(diff) > 50) { diff > 0 ? prev() : next(); }
+            });
+
+            // Pause on hover
+            track.closest('.carousel-section').addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+            track.closest('.carousel-section').addEventListener('mouseleave', () => startAutoplay());
+
+            // Keyboard
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prev();
+                if (e.key === 'ArrowRight') next();
+            });
+
+            // Resize
+            window.addEventListener('resize', () => {
+                slidesPerView = getSlidesPerView();
+                if (current > getMaxIndex()) current = getMaxIndex();
+                buildDots();
+                updateUI();
+            });
+
+            // Init
+            slidesPerView = getSlidesPerView();
+            buildDots();
+            updateUI();
+            startAutoplay();
+        })();
+
+        // ═══════════════════════════════════════════
+        // ENRICHMENTS JS — Subtle & Elegant
+        // ═══════════════════════════════════════════
+
+        // ═══ CUSTOM CURSOR ═══
+        if (window.innerWidth > 768) {
+            const dot = document.getElementById('cursorDot');
+            const ring = document.getElementById('cursorRing');
+            let mx = 0, my = 0, dx = 0, dy = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mx = e.clientX; my = e.clientY;
+                dot.style.left = mx + 'px';
+                dot.style.top = my + 'px';
+            });
+
+            // Smooth follow for ring
+            function followCursor() {
+                dx += (mx - dx) * 0.15;
+                dy += (my - dy) * 0.15;
+                ring.style.left = dx + 'px';
+                ring.style.top = dy + 'px';
+                requestAnimationFrame(followCursor);
+            }
+            followCursor();
+
+            // Hover state
+            const hoverTargets = 'a, button, input, textarea, .carousel-btn, .partner-chip, .gamme, .bc, .impact-card, .inno-row, .gal-item, .carousel-slide, .nav-cta, .btn-glow, .btn-outline';
+            document.querySelectorAll(hoverTargets).forEach(el => {
+                el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+                el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+            });
+
+            // Click state
+            document.addEventListener('mousedown', () => ring.classList.add('click'));
+            document.addEventListener('mouseup', () => ring.classList.remove('click'));
+        }
+
+        // ═══ HOVER GLOW — mouse-following light on cards ═══
+        document.querySelectorAll('.bc, .gamme, .impact-card, .gal-item, .terrain-card').forEach(card => {
+            const glow = document.createElement('div');
+            glow.className = 'hover-glow';
+            card.appendChild(glow);
+
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                glow.style.left = (e.clientX - rect.left) + 'px';
+                glow.style.top = (e.clientY - rect.top) + 'px';
+            });
+        });
+
+        // ═══ MAGNETIC BUTTONS — subtle pull toward cursor ═══
+        document.querySelectorAll('.btn-glow, .btn-outline, .carousel-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const strength = btn.classList.contains('carousel-btn') ? 0.25 : 0.12;
+                btn.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+            });
+        });
+
+        // ═══ PARALLAX BLOBS — move with scroll ═══
+        const blobs = document.querySelectorAll('.gradient-blob');
+        window.addEventListener('scroll', () => {
+            const s = window.scrollY;
+            blobs.forEach((b, i) => {
+                const speed = 0.02 + i * 0.015;
+                const dir = i % 2 === 0 ? 1 : -1;
+                b.style.transform = `translateY(${s * speed * dir}px)`;
+            });
+        }, { passive: true });
+
+        // ═══ PARALLAX TROPICAL DECOS ═══
+        const decos = document.querySelectorAll('.tropical-deco');
+        window.addEventListener('scroll', () => {
+            const s = window.scrollY;
+            decos.forEach((d, i) => {
+                const speed = 0.03 + i * 0.02;
+                const base = d.style.transform || '';
+                // Only add translateY, preserve existing transforms
+                d.style.transform = base.replace(/translateY\([^)]*\)/g, '') + ` translateY(${s * speed}px)`;
+            });
+        }, { passive: true });
+
+        // ═══ SMOOTH NUMBER REVEAL on stats ═══
+        document.querySelectorAll('.bc-stat').forEach(stat => {
+            stat.style.opacity = '0';
+            stat.style.transform = 'translateY(20px) scale(0.9)';
+            stat.style.transition = 'all 0.8s cubic-bezier(0.16,1,0.3,1)';
+
+            const statObs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.style.opacity = '1';
+                        e.target.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            }, { threshold: 0.5 });
+            statObs.observe(stat);
+        });
+
+        // ═══ BULLES TROPICALES DYNAMIQUES ═══
+        (function() {
+            const bubbleSections = ['concept', 'gammes', 'innovations', 'impact', 'contact'];
+            bubbleSections.forEach(id => {
+                const section = document.getElementById(id);
+                if (!section) return;
+                for (let i = 0; i < 5; i++) {
+                    const b = document.createElement('div');
+                    b.className = 'trop-bubble';
+                    const size = 8 + Math.random() * 20;
+                    b.style.cssText = `
+                        width: ${size}px; height: ${size}px;
+                        left: ${5 + Math.random() * 85}%;
+                        bottom: ${5 + Math.random() * 30}%;
+                        animation-duration: ${6 + Math.random() * 8}s;
+                        animation-delay: ${Math.random() * 5}s;
+                    `;
+                    section.appendChild(b);
+                }
+            });
+        })();
+
+    </script>
+</body>
+</html>
