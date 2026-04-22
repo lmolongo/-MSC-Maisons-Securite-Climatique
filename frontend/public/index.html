@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/shared.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 <script defer src="http://localhost:3000/script.js" data-website-id="7166f7fc-acb9-45b1-abdb-d6f179aaf6ff"></script>    
 </head>
 <body>
@@ -27,35 +28,39 @@
     <div class="scroll-progress" id="scrollProgress"></div>
     <canvas id="bgCanvas"></canvas>
 
-    <div class="mob-nav" id="mobNav">
-        <button class="mob-close" id="mobClose">✕</button>
-        <a href="#accueil" class="mob-link">Accueil</a>
-        <a href="#concept" class="mob-link">Concept</a>
-        <a href="#gammes" class="mob-link">Nos Gammes</a>
-        <a href="#innovations" class="mob-link">Innovations</a>
-        <a href="/terrains" class="mob-link">Terrains</a>
-        <a href="#impact" class="mob-link">Impact</a>
-        <a href="#contact" class="mob-link">Contact</a>
-    </div>
+  <div class="mob-nav" id="mobNav">
+    <button class="mob-close" id="mobClose">✕</button>
+    <a href="#accueil" class="mob-link">Accueil</a>
+    <a href="#concept" class="mob-link">Concept</a>
+    <a href="#gammes" class="mob-link">Nos Gammes</a>
+    <a href="#modulaire" class="mob-link">Modulaire</a>
+    <a href="#processus" class="mob-link">Processus</a>
+    <a href="#innovations" class="mob-link">Innovations</a>
+    <a href="/terrains" class="mob-link">Terrains</a>
+    <a href="#impact" class="mob-link">Impact</a>
+    <a href="#contact" class="mob-link">Contact</a>
+</div>
 
-    <!-- NAV -->
-    <div class="nav-wrap" id="navWrap">
-        <nav class="nav-bar">
-            <a href="#accueil" class="nav-brand">
-                <div class="nav-logo">MSC</div>
-                <span>MAISONS SÉCURITÉ CLIMATIQUE</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#concept">Concept</a></li>
-                <li><a href="#gammes">Nos Gammes</a></li>
-                <li><a href="#innovations">Innovations</a></li>
-                <li><a href="/terrains">Terrains</a></li>
-                <li><a href="#impact">Impact</a></li>
-            </ul>
-            <a href="#contact" class="nav-cta">Nous contacter</a>
-            <button class="mobile-btn" id="mobBtn">☰</button>
-        </nav>
-    </div>
+<!-- NAV -->
+<div class="nav-wrap" id="navWrap">
+    <nav class="nav-bar">
+        <a href="#accueil" class="nav-brand">
+            <div class="nav-logo">MSC</div>
+            <span>MAISONS SÉCURITÉ CLIMATIQUE</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#concept">Concept</a></li>
+            <li><a href="#gammes">Nos Gammes</a></li>
+            <li><a href="#modulaire">Modulaire</a></li>
+            <li><a href="#processus">Processus</a></li>
+            <li><a href="#innovations">Innovations</a></li>
+            <li><a href="/terrains">Terrains</a></li>
+            <li><a href="#impact">Impact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Nous contacter</a>
+        <button class="mobile-btn" id="mobBtn">☰</button>
+    </nav>
+</div>
 
     <!-- HERO -->
     <section class="hero" id="accueil">
@@ -922,6 +927,17 @@
         </svg>
     </div>
 
+    <div class="section-divider divider-icons">
+    <span class="divider-bar"></span>
+    <div class="divider-icons-row">
+        <span class="di-item" style="color:var(--bleu)">💧</span>
+        <span class="di-item" style="color:var(--jaune)">☀️</span>
+        <span class="di-item" style="color:var(--vert)">🌴</span>
+        <span class="di-item" style="color:var(--marron)">🏠</span>
+    </div>
+    <span class="divider-bar"></span>
+</div>
+
     <!-- CONCEPT BENTO -->
     <section class="section" id="concept">
         <div data-r>
@@ -930,12 +946,90 @@
             <p class="section-p">Chaque composant pensé pour le climat caribéen, la sécurité et l'autonomie.</p>
         </div>
         <div class="bento">
-            <div class="bc bc-water" data-r data-r-d="1">
-                <div class="bc-inner-glow" style="background: var(--bleu);"></div>
-                <div class="bc-icon ic-bleu">💧</div>
-                <h3>Bioclimatique & Eau</h3>
-                <p>Ventilation naturelle double flux orientée alizés. Citerne intégrée de 11 000 litres d'eau filtrée alimentaire. Confort thermique permanent sans climatisation.</p>
-            </div>
+           <div class="bc bc-water" data-r data-r-d="1">
+    <div class="bc-inner-glow" style="background: var(--bleu);"></div>
+
+    <!-- Illustration bioclimatique -->
+    <svg class="bc-illus" viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Maison section (cross-section, clean) -->
+        <rect x="80" y="90" width="200" height="130" fill="#ffffff" stroke="#2478a0" stroke-width="1.5" opacity="0.85" rx="2"/>
+        <!-- Roof -->
+        <polygon points="65,92 180,35 295,92" fill="#2478a0" opacity="0.75"/>
+        <polygon points="65,92 180,35 120,62" fill="#ffffff" opacity="0.15"/>
+        <line x1="62" y1="92" x2="298" y2="92" stroke="#1d6586" stroke-width="1.5"/>
+
+        <!-- Floor line -->
+        <line x1="80" y1="210" x2="280" y2="210" stroke="#7d5e35" stroke-width="1" opacity="0.4"/>
+
+        <!-- Low air intake (left, green) — alizés -->
+        <rect x="80" y="170" width="16" height="32" fill="#e8f8f3" stroke="#2d8a4e" stroke-width="1.2" rx="1"/>
+        <line x1="80" y1="176" x2="96" y2="176" stroke="#2d8a4e" stroke-width="0.8"/>
+        <line x1="80" y1="183" x2="96" y2="183" stroke="#2d8a4e" stroke-width="0.8"/>
+        <line x1="80" y1="190" x2="96" y2="190" stroke="#2d8a4e" stroke-width="0.8"/>
+        <line x1="80" y1="197" x2="96" y2="197" stroke="#2d8a4e" stroke-width="0.8"/>
+
+        <!-- High air outlet (right, yellow) — chaleur -->
+        <rect x="264" y="100" width="16" height="28" fill="#fcf5dc" stroke="#e8a820" stroke-width="1.2" rx="1"/>
+        <line x1="264" y1="106" x2="280" y2="106" stroke="#e8a820" stroke-width="0.8"/>
+        <line x1="264" y1="113" x2="280" y2="113" stroke="#e8a820" stroke-width="0.8"/>
+        <line x1="264" y1="120" x2="280" y2="120" stroke="#e8a820" stroke-width="0.8"/>
+
+        <!-- Incoming cool air arrows (left) -->
+        <g stroke="#2478a0" stroke-width="1.8" fill="none" opacity="0.75" stroke-linecap="round">
+            <path d="M15 182 L72 182"/>
+            <path d="M66 177 L74 182 L66 187"/>
+        </g>
+        <g stroke="#2478a0" stroke-width="1.3" fill="none" opacity="0.5" stroke-linecap="round">
+            <path d="M25 195 L62 195"/>
+            <path d="M56 190 L64 195 L56 200"/>
+        </g>
+        <text x="15" y="172" font-family="Poppins,sans-serif" font-size="9" fill="#2478a0" font-weight="700" opacity="0.85">ALIZÉS</text>
+
+        <!-- Internal airflow — cool rises and crosses -->
+        <path d="M100 186 C130 175, 155 150, 170 115" stroke="#4a9dc0" stroke-width="1.5" fill="none" opacity="0.55" stroke-dasharray="5 4"/>
+        <path d="M165 115 L172 108 L179 115" stroke="#4a9dc0" stroke-width="1.3" fill="none" opacity="0.55"/>
+
+        <!-- Warm air to outlet -->
+        <path d="M180 115 C200 120, 230 118, 258 114" stroke="#e8a820" stroke-width="1.5" fill="none" opacity="0.55" stroke-dasharray="5 4"/>
+        <path d="M252 108 L262 114 L252 120" stroke="#e8a820" stroke-width="1.3" fill="none" opacity="0.55"/>
+
+        <!-- Hot air going out (right) -->
+        <g stroke="#c45545" stroke-width="1.8" fill="none" opacity="0.7" stroke-linecap="round">
+            <path d="M286 114 L340 106"/>
+            <path d="M334 100 L342 106 L335 112"/>
+        </g>
+        <text x="345" y="106" font-family="Poppins,sans-serif" font-size="9" fill="#c45545" font-weight="700" opacity="0.7" text-anchor="end">CHALEUR</text>
+
+        <!-- Underground cistern -->
+        <line x1="50" y1="220" x2="310" y2="220" stroke="#7d5e35" stroke-width="0.8" opacity="0.3" stroke-dasharray="3 3"/>
+        <rect x="120" y="228" width="130" height="40" fill="#0a2030" opacity="0.55" rx="3" stroke="#2478a0" stroke-width="1"/>
+        <!-- Water -->
+        <rect x="122" y="245" width="126" height="22" fill="#2478a0" opacity="0.55" rx="2"/>
+        <!-- Wave -->
+        <path d="M122 245 Q150 240 185 245 Q220 250 248 245" stroke="#4a9dc0" stroke-width="1" fill="none" opacity="0.7"/>
+        <!-- Capacity label -->
+        <text x="185" y="260" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" fill="#4a9dc0" font-weight="800" opacity="0.85">11 000 L</text>
+
+        <!-- Pipe connecting house to cistern -->
+        <rect x="181" y="215" width="8" height="15" fill="#2478a0" opacity="0.5" rx="1"/>
+        <!-- Rain drops -->
+        <g fill="#4a9dc0" opacity="0.45">
+            <ellipse cx="50" cy="25" rx="1.5" ry="3"/>
+            <ellipse cx="60" cy="15" rx="1.5" ry="3"/>
+            <ellipse cx="45" cy="35" rx="1.2" ry="2.5"/>
+            <ellipse cx="310" cy="20" rx="1.5" ry="3"/>
+            <ellipse cx="320" cy="30" rx="1.2" ry="2.5"/>
+            <ellipse cx="300" cy="35" rx="1.5" ry="3"/>
+        </g>
+        <!-- Roof rain collection (subtle) -->
+        <path d="M90 95 L90 100 Q90 105 95 105 L180 105" stroke="#4a9dc0" stroke-width="0.8" fill="none" opacity="0.3" stroke-dasharray="3 3"/>
+        <path d="M270 95 L270 100 Q270 105 265 105 L185 105" stroke="#4a9dc0" stroke-width="0.8" fill="none" opacity="0.3" stroke-dasharray="3 3"/>
+    </svg>
+
+    <div class="bc-icon ic-bleu">💧</div>
+    <h3>Bioclimatique & Eau</h3>
+    <p>Ventilation naturelle double flux orientée alizés. Citerne intégrée de 11 000 litres d'eau filtrée alimentaire. Confort thermique permanent sans climatisation.</p>
+</div>
             <div class="bc bc-cyclone" data-r data-r-d="2">
                 <div class="bc-inner-glow" style="background: var(--jaune);"></div>
                 <div class="bc-stat s-jaune">Cat. 5</div>
@@ -1031,6 +1125,314 @@
         </div>
     </section>
 
+
+    <!-- INSTALLATION MODULAIRE -->
+<section class="section" id="modulaire">
+    <div data-r>
+        <span class="section-tag tag-marron">Installation Modulaire</span>
+        <h2 class="section-h">Maison modulaire<br><em>clé en main</em></h2>
+        <p class="section-p">Une solution moderne, rapide et haut de gamme — livrée et installée sur votre terrain.</p>
+    </div>
+
+    <div class="modulaire-grid" data-r data-r-d="2">
+        <!-- Features -->
+        <div class="modulaire-features">
+            <h3 class="mod-h">Ce qui est inclus</h3>
+            <div class="mod-feat"><div class="mod-check">✓</div><span>Installation sur dalle béton</span></div>
+            <div class="mod-feat"><div class="mod-check">✓</div><span>Structure sur pilotis adaptée au terrain</span></div>
+            <div class="mod-feat"><div class="mod-check">✓</div><span>Montage rapide et sécurisé</span></div>
+            <div class="mod-feat"><div class="mod-check">✓</div><span>Terrasse en hauteur avec garde-corps</span></div>
+            <div class="mod-feat"><div class="mod-check">✓</div><span>Escalier extérieur design</span></div>
+            <div class="mod-feat"><div class="mod-check">✓</div><span>Finitions propres et modernes</span></div>
+        </div>
+
+        <!-- Visual -->
+      <!-- Visual -->
+<div class="modulaire-visual">
+    <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="xMidYMid slice">
+        <!-- Sky gradient -->
+        <defs>
+            <linearGradient id="modSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c8e8f0"/>
+                <stop offset="60%" stop-color="#e4f4f0"/>
+                <stop offset="100%" stop-color="#d8ebd8"/>
+            </linearGradient>
+            <linearGradient id="modModule" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#e8eef2"/>
+            </linearGradient>
+        </defs>
+        <rect width="400" height="320" fill="url(#modSky)"/>
+
+        <!-- Sun -->
+        <circle cx="340" cy="55" r="28" fill="#f0c050" opacity="0.3"/>
+        <circle cx="340" cy="55" r="18" fill="#e8a820" opacity="0.35"/>
+
+        <!-- Distant hills -->
+        <path d="M0 180 Q80 155 160 168 Q240 180 320 160 Q380 148 400 160 L400 220 L0 220 Z" fill="#4aaa6c" opacity="0.22"/>
+        <path d="M0 200 Q100 180 200 190 Q300 200 400 185 L400 235 L0 235 Z" fill="#2d8a4e" opacity="0.18"/>
+
+        <!-- Concrete slab -->
+        <rect x="40" y="255" width="330" height="8" fill="#9a7a50" opacity="0.55" rx="1"/>
+        <rect x="40" y="263" width="330" height="35" fill="#7d5e35" opacity="0.28"/>
+        <!-- Slab texture -->
+        <g stroke="#564022" stroke-width="0.5" opacity="0.25">
+            <line x1="60" y1="263" x2="65" y2="295"/>
+            <line x1="110" y1="263" x2="115" y2="295"/>
+            <line x1="170" y1="263" x2="175" y2="295"/>
+            <line x1="230" y1="263" x2="235" y2="295"/>
+            <line x1="290" y1="263" x2="295" y2="295"/>
+            <line x1="350" y1="263" x2="355" y2="295"/>
+        </g>
+
+        <!-- Pilotis (stilts) -->
+        <rect x="95" y="180" width="7" height="75" fill="#e8eef2" stroke="#2478a0" stroke-width="0.8" rx="1"/>
+        <rect x="200" y="180" width="7" height="75" fill="#e8eef2" stroke="#2478a0" stroke-width="0.8" rx="1"/>
+        <rect x="305" y="180" width="7" height="75" fill="#e8eef2" stroke="#2478a0" stroke-width="0.8" rx="1"/>
+        <!-- Pilotis base -->
+        <rect x="90" y="252" width="17" height="5" fill="#564022" opacity="0.6" rx="1"/>
+        <rect x="195" y="252" width="17" height="5" fill="#564022" opacity="0.6" rx="1"/>
+        <rect x="300" y="252" width="17" height="5" fill="#564022" opacity="0.6" rx="1"/>
+
+        <!-- MODULE BAS (ground floor) -->
+        <rect x="80" y="180" width="230" height="80" fill="url(#modModule)" stroke="#2478a0" stroke-width="1.2" rx="2"/>
+        <!-- Wood accent strip -->
+        <rect x="185" y="180" width="30" height="80" fill="#c4a882" opacity="0.7"/>
+        <g stroke="#9a7a50" stroke-width="0.5" opacity="0.5">
+            <line x1="185" y1="195" x2="215" y2="195"/>
+            <line x1="185" y1="215" x2="215" y2="215"/>
+            <line x1="185" y1="235" x2="215" y2="235"/>
+        </g>
+        <!-- Large window bas -->
+        <rect x="95" y="195" width="80" height="50" fill="#2478a0" opacity="0.25" stroke="#1d6586" stroke-width="0.8" rx="1"/>
+        <line x1="135" y1="195" x2="135" y2="245" stroke="#1d6586" stroke-width="0.6" opacity="0.5"/>
+        <line x1="95" y1="220" x2="175" y2="220" stroke="#1d6586" stroke-width="0.6" opacity="0.5"/>
+        <!-- Door module bas -->
+        <rect x="225" y="205" width="35" height="55" fill="#1a3550" opacity="0.55" stroke="#1d6586" stroke-width="0.8" rx="1"/>
+        <rect x="228" y="210" width="29" height="44" fill="#4a9dc0" opacity="0.3" rx="1"/>
+        <!-- Small window right bas -->
+        <rect x="270" y="200" width="30" height="35" fill="#2478a0" opacity="0.25" stroke="#1d6586" stroke-width="0.8" rx="1"/>
+
+        <!-- MODULE HAUT (upper floor, cantilevered) -->
+        <rect x="150" y="95" width="210" height="85" fill="url(#modModule)" stroke="#2478a0" stroke-width="1.2" rx="2"/>
+        <!-- Wood accent strip haut -->
+        <rect x="155" y="95" width="25" height="85" fill="#c4a882" opacity="0.7"/>
+        <g stroke="#9a7a50" stroke-width="0.5" opacity="0.5">
+            <line x1="155" y1="112" x2="180" y2="112"/>
+            <line x1="155" y1="132" x2="180" y2="132"/>
+            <line x1="155" y1="152" x2="180" y2="152"/>
+        </g>
+        <!-- Panoramic window haut -->
+        <rect x="190" y="108" width="160" height="58" fill="#1a3550" opacity="0.7" stroke="#1d6586" stroke-width="0.8" rx="1"/>
+        <!-- Reflection -->
+        <path d="M200 120 L250 120 L240 160 L190 160 Z" fill="white" opacity="0.12"/>
+        <line x1="240" y1="108" x2="240" y2="166" stroke="#4a9dc0" stroke-width="0.5" opacity="0.4"/>
+        <line x1="290" y1="108" x2="290" y2="166" stroke="#4a9dc0" stroke-width="0.5" opacity="0.4"/>
+
+        <!-- TERRASSE (left side) -->
+        <rect x="80" y="172" width="75" height="8" fill="#e8eef2" stroke="#2478a0" stroke-width="0.8" rx="1"/>
+        <!-- Garde-corps (railing) -->
+        <rect x="80" y="140" width="2" height="35" fill="#4a9dc0" opacity="0.6"/>
+        <rect x="155" y="140" width="2" height="35" fill="#4a9dc0" opacity="0.6"/>
+        <line x1="82" y1="142" x2="155" y2="142" stroke="#4a9dc0" stroke-width="1.2" opacity="0.6"/>
+        <line x1="82" y1="158" x2="155" y2="158" stroke="#4a9dc0" stroke-width="1" opacity="0.45"/>
+        <line x1="82" y1="172" x2="155" y2="172" stroke="#4a9dc0" stroke-width="1" opacity="0.45"/>
+        <!-- Verticals -->
+        <g stroke="#4a9dc0" stroke-width="0.6" opacity="0.4">
+            <line x1="92" y1="142" x2="92" y2="172"/>
+            <line x1="104" y1="142" x2="104" y2="172"/>
+            <line x1="116" y1="142" x2="116" y2="172"/>
+            <line x1="128" y1="142" x2="128" y2="172"/>
+            <line x1="140" y1="142" x2="140" y2="172"/>
+        </g>
+
+        <!-- ESCALIER (stairs) -->
+        <g stroke="#2478a0" stroke-width="0.8" fill="#ffffff" fill-opacity="0.85">
+            <path d="M148 178 L175 178 L175 186 L158 186 L158 194 L175 194 L175 202 L158 202 L158 210 L175 210 L175 218 L158 218 L158 226 L175 226 L175 234 L158 234 L158 242 L175 242 L175 250 L148 250 Z"/>
+        </g>
+        <!-- Stair handrail -->
+        <line x1="148" y1="178" x2="175" y2="250" stroke="#4a9dc0" stroke-width="1.2" opacity="0.7"/>
+        <g fill="#4a9dc0" opacity="0.5">
+            <circle cx="152" cy="190" r="1"/>
+            <circle cx="158" cy="208" r="1"/>
+            <circle cx="165" cy="226" r="1"/>
+            <circle cx="172" cy="244" r="1"/>
+        </g>
+
+        <!-- Roof top (flat) -->
+        <rect x="148" y="92" width="214" height="5" fill="#1d6586" opacity="0.7" rx="1"/>
+        <rect x="78" y="177" width="234" height="5" fill="#1d6586" opacity="0.7" rx="1"/>
+
+        <!-- Tropical plants left -->
+        <path d="M25 298 C28 270,30 245,32 222" stroke="#564022" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M32 222 C20 210,8 200,-5 195" stroke="#2d8a4e" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.75"/>
+        <path d="M32 222 C28 205,25 188,24 170" stroke="#4aaa6c" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M32 222 C42 208,52 196,62 192" stroke="#2d8a4e" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.75"/>
+
+        <!-- Right side palm -->
+        <path d="M385 298 C383 270,382 245,380 225" stroke="#564022" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+        <path d="M380 225 C392 212,402 202,410 198" stroke="#4aaa6c" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M380 225 C378 208,376 190,375 172" stroke="#2d8a4e" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.65"/>
+        <path d="M380 225 C368 212,356 204,348 203" stroke="#4aaa6c" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.7"/>
+
+        <!-- Tiny grass details -->
+        <g stroke="#2d8a4e" stroke-width="0.8" opacity="0.5">
+            <line x1="15" y1="298" x2="14" y2="292"/>
+            <line x1="55" y1="298" x2="54" y2="293"/>
+            <line x1="72" y1="298" x2="71" y2="292"/>
+            <line x1="340" y1="298" x2="339" y2="293"/>
+            <line x1="360" y1="298" x2="361" y2="292"/>
+            <line x1="370" y1="298" x2="371" y2="294"/>
+        </g>
+    </svg>
+
+    <div class="mod-badge">
+        <span class="mod-badge-dot"></span>
+        Livraison 4 à 8 semaines
+    </div>
+</div>
+
+        <!-- Ideal pour -->
+        <div class="modulaire-col">
+            <h4 class="mod-col-h">Idéal pour</h4>
+            <ul class="mod-list">
+                <li>Résidence principale</li>
+                <li>Location saisonnière</li>
+                <li>Investissement locatif</li>
+                <li>Extension de maison</li>
+            </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="modulaire-col">
+            <h4 class="mod-col-h">Nos services</h4>
+            <ul class="mod-list">
+                <li>Étude technique</li>
+                <li>Installation complète</li>
+                <li>Aménagement sur mesure</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bloc téléphone en exergue -->
+    <div class="phone-hero" data-r data-r-d="3">
+        <div class="phone-hero-bg"></div>
+        <div class="phone-hero-inner">
+            <div class="phone-hero-left">
+                <span class="phone-hero-tag">📞 Contact direct</span>
+                <h3>Un projet ? Appelez-nous.</h3>
+                <p>Étude gratuite · Devis sous 48h · Zone d'intervention : Guadeloupe · Martinique · Guyane</p>
+            </div>
+            <div class="phone-hero-right">
+                <a href="tel:+330691288012" class="phone-big">
+                    <span class="phone-icon">📱</span>
+                    <span class="phone-num">+33 06 91 28 80 12</span>
+                </a>
+                <a href="tel:+330691250737" class="phone-big phone-alt">
+                    <span class="phone-icon">📱</span>
+                    <span class="phone-num">+33 06 91 25 07 37</span>
+                </a>
+                <a href="https://wa.me/330691288012" target="_blank" rel="noopener" class="phone-wa">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.6c1.7.9 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESSUS -->
+<section class="section" id="processus">
+    <div data-r>
+        <span class="section-tag tag-vert">Notre démarche</span>
+        <h2 class="section-h">De l'idée<br>aux <em>clés en main</em></h2>
+        <p class="section-p">Un accompagnement sur mesure en 5 étapes, de la première rencontre jusqu'à la remise des clés.</p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="process-timeline" data-r data-r-d="2">
+        <div class="process-line"></div>
+
+        <div class="process-step" style="--step-color: var(--bleu); --step-glow: var(--bleu-glow);">
+            <div class="process-dot">
+                <span class="process-num">01</span>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">📞</div>
+                <h3>Premier contact</h3>
+                <p>Échange téléphonique ou visio pour comprendre votre projet, votre budget et vos contraintes.</p>
+                <span class="process-duration">15 min</span>
+            </div>
+        </div>
+
+        <div class="process-step" style="--step-color: var(--vert); --step-glow: var(--vert-glow);">
+            <div class="process-dot">
+                <span class="process-num">02</span>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">📐</div>
+                <h3>Étude technique</h3>
+                <p>Visite du terrain, étude de sol, vérification RTAA DOM et des contraintes locales (PLU, zone).</p>
+                <span class="process-duration">1 à 2 semaines</span>
+            </div>
+        </div>
+
+        <div class="process-step" style="--step-color: var(--jaune); --step-glow: var(--jaune-glow);">
+            <div class="process-dot">
+                <span class="process-num">03</span>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">📋</div>
+                <h3>Devis & contrat</h3>
+                <p>Chiffrage détaillé, choix de la gamme, validation des plans et signature du contrat CCMI.</p>
+                <span class="process-duration">48h pour le devis</span>
+            </div>
+        </div>
+
+        <div class="process-step" style="--step-color: var(--corail); --step-glow: var(--corail-glow);">
+            <div class="process-dot">
+                <span class="process-num">04</span>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">🏗️</div>
+                <h3>Chantier</h3>
+                <p>Fondations, structure Posytec/Sismo, second œuvre et finitions. Suivi hebdomadaire garanti.</p>
+                <span class="process-duration">4 à 8 mois</span>
+            </div>
+        </div>
+
+        <div class="process-step" style="--step-color: var(--marron); --step-glow: var(--marron-glow);">
+            <div class="process-dot">
+                <span class="process-num">05</span>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">🔑</div>
+                <h3>Remise des clés</h3>
+                <p>Réception, visite de contrôle, garantie décennale activée. Bienvenue chez vous.</p>
+                <span class="process-duration">Jour J</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="process-cta" data-r data-r-d="3">
+        <p>Prêt à lancer votre projet ?</p>
+        <a href="#contact" class="btn-glow">Démarrer l'étude <span class="arrow">→</span></a>
+    </div>
+</section>
+
+<!-- SÉPARATEUR — entre Innovations et Impact -->
+<div class="section-divider divider-icons">
+    <span class="divider-bar"></span>
+    <div class="divider-icons-row">
+        <span class="di-item" style="color:var(--jaune)">⚙️</span>
+        <span class="di-item" style="color:var(--vert)">👷</span>
+        <span class="di-item" style="color:var(--marron)">🏭</span>
+        <span class="di-item" style="color:var(--corail)">🎓</span>
+    </div>
+    <span class="divider-bar"></span>
+</div>
+
     <!-- INNOVATIONS -->
     <section class="section" id="innovations">
         <div data-r>
@@ -1119,11 +1521,11 @@
         <div class="partners-inner" data-r>
             <p class="partners-label">Nos partenaires institutionnels & techniques</p>
             <div class="partners-row">
-                <a href="#" class="partner-chip"><span>ADEME Guadeloupe</span><span class="arr">↗</span></a>
-                <a href="#" class="partner-chip"><span>Région Guadeloupe</span><span class="arr">↗</span></a>
-                <a href="#" class="partner-chip"><span>DEAL Guadeloupe</span><span class="arr">↗</span></a>
-                <a href="#" class="partner-chip"><span>Posytec France</span><span class="arr">↗</span></a>
-                <a href="#" class="partner-chip"><span>Sismo France</span><span class="arr">↗</span></a>
+                <a href="https://www.ademe.fr/direction-regionale/guadeloupe/" class="partner-chip"><span>ADEME Guadeloupe</span><span class="arr">↗</span></a>
+                <a href="https://www.regionguadeloupe.fr/" class="partner-chip"><span>Région Guadeloupe</span><span class="arr">↗</span></a>
+                <a href="https://www.guadeloupe.developpement-durable.gouv.fr/" class="partner-chip"><span>DEAL Guadeloupe</span><span class="arr">↗</span></a>
+                <a href="https://sismo-technology.com/" class="partner-chip"><span>Posytec France</span><span class="arr">↗</span></a>
+                <a href="https://sismo-technology.com/" class="partner-chip"><span>Sismo France</span><span class="arr">↗</span></a>
             </div>
         </div>
     </div>
@@ -1671,5 +2073,12 @@
         })();
 
     </script>
+    <!-- WhatsApp Float CTA -->
+<a href="https://wa.me/330691288012" class="wa-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+    <span class="wa-pulse"></span>
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="white">
+        <path d="M16 0C7.2 0 0 7.2 0 16c0 2.8.7 5.5 2.1 7.9L0 32l8.3-2.1c2.3 1.3 5 2 7.7 2 8.8 0 16-7.2 16-16S24.8 0 16 0zm0 29.3c-2.5 0-5-.7-7.1-1.9l-.5-.3-5.3 1.4 1.4-5.1-.3-.5c-1.4-2.2-2.1-4.8-2.1-7.4 0-7.6 6.2-13.8 13.9-13.8 3.7 0 7.2 1.4 9.8 4.1 2.6 2.6 4.1 6.1 4.1 9.8 0 7.6-6.3 13.7-13.9 13.7zm7.6-10.2c-.4-.2-2.5-1.2-2.8-1.4-.4-.1-.7-.2-.9.2-.3.4-1.1 1.4-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.8-.7-3.4-2.1-1.3-1.1-2.1-2.5-2.4-2.9-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.2-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4 0 2 1.5 3.9 1.7 4.2.2.3 2.9 4.4 7 6.2.9.4 1.7.6 2.2.8 1 .3 1.8.3 2.5.2.8-.1 2.5-1 2.8-2 .3-1 .3-1.8.2-2-.1-.2-.4-.3-.7-.5z"/>
+    </svg>
+</a>
 </body>
 </html>
