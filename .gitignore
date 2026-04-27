@@ -1,5 +1,17 @@
 node_modules/
 dist/
-.env.*
-*.log
 pg_data/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Certbot 
+certbot/conf/
+certbot/www/
+
+
+# Logs
+*.log
+logs/
