@@ -65,6 +65,14 @@ services:
       - "3000:3000"
     networks:
       - msc-net
+  certbot:
+    image: certbot/certbot
+    container_name: msc-certbot
+    restart: unless-stopped
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --quiet; sleep 12h & wait $${!}; done;'"
 
 volumes:
   pg_data:
